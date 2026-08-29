@@ -1,1545 +1,336 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>MohamedSM // Offensive Security</title>
-
-  <meta
-    name="description"
-    content="MohamedSM — Cybersecurity student focused on penetration testing, web application security, network security and offensive security."
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed — Penetration Tester Portfolio</title>
+<meta name="description" content="Mohamed — aspiring penetration tester. eJPT v2 candidate, OSCP+ track. Web application security and offensive security engagements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <!-- =========================================================
-       BOOT / STATUS BAR
-  ========================================================== -->
+<canvas id="matrixCanvas" class="matrix-bg" aria-hidden="true"></canvas>
 
-  <div class="bootbar">
-    <div class="container bootbar-inner">
+<header>
+  <nav class="wrap">
+    <div class="logo">mohamed<span class="dim">@</span>sec<span class="logo-cursor"></span></div>
 
-      <div class="boot-left">
-        <span class="pulse"></span>
-        TARGET STATUS:
-        <strong>ONLINE</strong>
-      </div>
-
-      <div class="boot-center">
-        ENGAGEMENT // MOHAMEDSM
-      </div>
-
-      <div class="boot-right">
-        AUTHORIZED LAB
-      </div>
-
+    <div class="navlinks" id="navlinks">
+      <a href="#home" data-nav><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>Home</a>
+      <a href="#certifications" data-nav><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/></svg>Certifications</a>
+      <a href="#skills" data-nav><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><line x1="12" y1="15" x2="16" y2="15"/></svg>Skills</a>
+      <a href="#engagements" data-nav><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>Engagements</a>
+      <a href="#writeups" data-nav><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/></svg>Writeups</a>
+      <a href="#methodology" data-nav><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></svg>Methodology</a>
+      <a href="#contact" data-nav><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a>
     </div>
+
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="mobilemenu">menu</button>
+  </nav>
+  <div class="mobilemenu" id="mobilemenu" hidden>
+    <a href="#home">Home</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#skills">Skills</a>
+    <a href="#engagements">Engagements</a>
+    <a href="#writeups">Writeups</a>
+    <a href="#methodology">Methodology</a>
+    <a href="#contact">Contact</a>
   </div>
+</header>
 
+<main>
+  <section id="home" class="section-home">
+    <div class="wrap">
 
-  <!-- =========================================================
-       NAV
-  ========================================================== -->
+      <!-- Profile card -->
+      <div class="card profile-card reveal">
+        <div class="avatar-wrap">
+          <div class="avatar">M</div>
+          <span class="avatar-status" title="Available for engagements"></span>
+        </div>
+        <div class="profile-info">
+          <h1>Mohamed <span class="divider">|</span> <span class="accent">sec</span></h1>
+          <div class="handle">@MohamedSM</div>
+          <div class="title-line">Aspiring Penetration Tester</div>
+          <div class="meta-row">
+            <span class="meta-item"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>Egypt</span>
+            <span class="meta-sep">&middot;</span>
+            <span class="meta-item"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>you@example.com</span>
+          </div>
 
-  <header class="header">
+          <div class="profile-actions">
+            <div class="social-row">
+              <!-- Update these href values with your real profiles -->
+              <a class="social-icon" href="https://github.com/MohamedSM" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+              <a class="social-icon" href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+              <a class="social-icon" href="https://x.com/your-handle" target="_blank" rel="noopener" aria-label="X">X</a>
+              <a class="social-icon" href="https://tryhackme.com/p/your-username" target="_blank" rel="noopener" aria-label="TryHackMe">TH</a>
+              <a class="social-icon" href="https://app.hackthebox.com/profile/your-id" target="_blank" rel="noopener" aria-label="HackTheBox">HB</a>
+            </div>
+            <!-- Add cv.pdf to this repo and point the link below at it -->
+            <a class="btn btn-primary" href="cv.pdf" download>
+              <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <div class="container nav">
-
-      <a href="#home" class="brand">
-        <span class="brand-mark">[</span>
-        MohamedSM
-        <span class="brand-mark">]</span>
-      </a>
-
-      <nav class="nav-links">
-
-        <a href="#home">HOME</a>
-        <a href="#about">PROFILE</a>
-        <a href="#skills">ARSENAL</a>
-        <a href="#projects">ENGAGEMENTS</a>
-        <a href="#certifications">CERTS</a>
-        <a href="#contact">CONTACT</a>
-
-      </nav>
-
-      <button
-        id="navtoggle"
-        class="menu-button"
-        aria-expanded="false"
-        aria-controls="mobilemenu"
-      >
-        MENU
-      </button>
+      <!-- About card -->
+      <div class="card about-card reveal">
+        <div class="card-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>About Me</div>
+        <div class="about-body" id="aboutBody">
+          <p>I'm a highly motivated aspiring penetration tester with a strong technical foundation in <strong>PHP, C++, and Python</strong>. I focus on web application security — finding logic flaws, chaining vulnerabilities, and understanding systems well enough to break them responsibly.</p>
+          <p class="about-more">My practical work is anchored in <strong>PortSwigger Web Security Academy</strong>, where I've built hands-on experience across SQL injection, XSS, LFI, SSRF, XXE, and command injection. I'm currently working through the eJPT v2 certification, with OSCP+ as my next milestone, following a structured five-phase roadmap covering scanning and enumeration through Active Directory pivoting.</p>
+          <p class="about-more">I train against deliberately vulnerable targets — Metasploitable 2 and VulnHub's Vulnerable AD v2 — and I build the tooling to support that study rather than just consuming courses. I'm open to bug bounty programs, freelance work, and junior penetration testing roles.</p>
+        </div>
+        <button class="show-more-btn" id="showMoreBtn" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          Show more
+        </button>
+      </div>
 
     </div>
+  </section>
 
-    <div id="mobilemenu" class="mobile-menu" hidden>
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">Certifications &amp; Training</span></div>
+      <p class="sec-sub reveal">Formal credentials and structured training, current and planned.</p>
 
-      <a href="#home">HOME</a>
-      <a href="#about">PROFILE</a>
-      <a href="#skills">ARSENAL</a>
-      <a href="#projects">ENGAGEMENTS</a>
-      <a href="#certifications">CERTS</a>
-      <a href="#contact">CONTACT</a>
+      <div class="card cert-list reveal">
+        <div class="cert-row">
+          <div class="cert-main">
+            <div class="cert-name">eJPT v2 — eLearnSecurity Junior Penetration Tester</div>
+            <div class="cert-issuer">INE / eLearnSecurity</div>
+          </div>
+          <span class="cert-status inprogress">IN PROGRESS</span>
+        </div>
+        <div class="cert-row">
+          <div class="cert-main">
+            <div class="cert-name">OSCP+ — OffSec Certified Professional</div>
+            <div class="cert-issuer">OffSec</div>
+          </div>
+          <span class="cert-status planned">PLANNED</span>
+        </div>
+        <div class="cert-row">
+          <div class="cert-main">
+            <div class="cert-name">Web Security Academy — practical labs across SQLi, XSS, LFI, SSRF, XXE, Command Injection</div>
+            <div class="cert-issuer">PortSwigger</div>
+          </div>
+          <span class="cert-status ongoing">ONGOING</span>
+        </div>
 
+        <!--
+          ADD YOUR CERTIFICATES HERE.
+          Copy one block below, fill it in, and place it above this comment.
+          Status options already styled: inprogress / ongoing / planned / earned
+
+          <div class="cert-row">
+            <div class="cert-main">
+              <div class="cert-name">Certificate name — full title</div>
+              <div class="cert-issuer">Issuing organization · Month Year</div>
+            </div>
+            <span class="cert-status earned">EARNED</span>
+          </div>
+        -->
+      </div>
+      <p class="cert-note reveal">Roadmap developed in collaboration with cybersecurity trainer <strong>Saif Makharzah</strong>.</p>
     </div>
+  </section>
 
-  </header>
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Attack Surface</span></div>
+      <p class="sec-sub reveal">nmap -sV skills.local — what's live now, and what's still being enumerated.</p>
 
-
-  <main>
-
-    <!-- =======================================================
-         HERO
-    ======================================================== -->
-
-    <section id="home" class="hero">
-
-      <div class="container hero-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="hero-content reveal">
-
-          <div class="classification">
-            OFFENSIVE SECURITY // PENETRATION TESTING
-          </div>
-
-          <h1>
-            I test systems<br>
-            <span>before attackers do.</span>
-          </h1>
-
-          <p class="hero-copy">
-            Cybersecurity student focused on practical penetration
-            testing, web application security, network enumeration,
-            privilege escalation and offensive security.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a
-              href="#projects"
-              class="button primary"
-            >
-              VIEW ENGAGEMENTS
-            </a>
-
-            <a
-              href="#contact"
-              class="button secondary"
-            >
-              ESTABLISH CONTACT
-            </a>
-
-          </div>
-
-
-          <div class="hero-terminal-preview">
-
-            <div class="small-terminal-head">
-              <span>TERMINAL</span>
-              <span>tty1</span>
-            </div>
-
-            <div class="small-terminal-body">
-
-              <div>
-                <span class="green">┌──(</span>
-                <span class="white">mohamed@kali</span>
-                <span class="green">)-[~]</span>
-              </div>
-
-              <div>
-                <span class="green">└─$</span>
-                <span class="white">whoami</span>
-              </div>
-
-              <div class="output">
-                mohamed
-              </div>
-
-              <div>
-                <span class="green">└─$</span>
-                <span class="white">cat role.txt</span>
-              </div>
-
-              <div class="output">
-                cybersecurity student / aspiring penetration tester
-              </div>
-
-              <div>
-                <span class="green">└─$</span>
-                <span class="white">./status.sh</span>
-              </div>
-
-              <div class="output success">
-                [OK] eJPT v2 preparation active
-              </div>
-
-            </div>
-
-          </div>
-
+      <div class="card scan-card reveal">
+        <div class="scan-block">
+          <div class="scan-block-title">Web vulnerabilities — hands-on (PortSwigger Labs)</div>
+          <div class="port-row"><span class="port-id">80/tcp</span><span class="port-name">SQL Injection</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">81/tcp</span><span class="port-name">Cross-Site Scripting (XSS)</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">82/tcp</span><span class="port-name">Local File Inclusion (LFI)</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">83/tcp</span><span class="port-name">Server-Side Request Forgery (SSRF)</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">84/tcp</span><span class="port-name">XML External Entity (XXE)</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">85/tcp</span><span class="port-name">Command Injection</span><span class="port-status open">OPEN</span></div>
         </div>
 
-
-        <!-- RIGHT -->
-
-        <div class="hero-console reveal">
-
-          <div class="console-top">
-
-            <div class="console-window">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div>
-              root@kali: /home/mohamed
-            </div>
-
-            <div class="live">
-              LIVE
-            </div>
-
-          </div>
-
-
-          <div class="console-content">
-
-            <div class="command">
-              <span>$</span> nmap -sC -sV target.local
-            </div>
-
-            <div class="command-result">
-              Starting Nmap 7.95...
-            </div>
-
-            <div class="port-line">
-              <span class="port">21/tcp</span>
-              <span>ftp</span>
-              <span class="open">OPEN</span>
-            </div>
-
-            <div class="port-line">
-              <span class="port">80/tcp</span>
-              <span>http</span>
-              <span class="open">OPEN</span>
-            </div>
-
-            <div class="port-line">
-              <span class="port">445/tcp</span>
-              <span>microsoft-ds</span>
-              <span class="open">OPEN</span>
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="command">
-              <span>$</span> ./enumerate.sh
-            </div>
-
-            <div class="finding">
-              <span class="finding-tag medium">MEDIUM</span>
-              Excessive service exposure
-            </div>
-
-            <div class="finding">
-              <span class="finding-tag high">HIGH</span>
-              Weak authentication surface
-            </div>
-
-            <div class="finding">
-              <span class="finding-tag critical">CRITICAL</span>
-              Sensitive file exposure
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="command">
-              <span>$</span> id
-            </div>
-
-            <div class="root-output">
-              uid=0(root) gid=0(root)
-            </div>
-
-          </div>
-
+        <div class="scan-block">
+          <div class="scan-block-title">Languages &amp; tooling</div>
+          <div class="port-row"><span class="port-id">443/tcp</span><span class="port-name">Python</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">444/tcp</span><span class="port-name">PHP</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">445/tcp</span><span class="port-name">C++</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">446/tcp</span><span class="port-name">Node.js / Express</span><span class="port-status open">OPEN</span></div>
         </div>
 
+        <div class="scan-block">
+          <div class="scan-block-title">Practice ranges</div>
+          <div class="port-row"><span class="port-id">22/tcp</span><span class="port-name">Metasploitable 2 — core exploitation</span><span class="port-status open">OPEN</span></div>
+          <div class="port-row"><span class="port-id">88/tcp</span><span class="port-name">Vulnerable AD v2 (VulnHub) — Active Directory</span><span class="port-status open">OPEN</span></div>
+        </div>
+
+        <div class="scan-block">
+          <div class="scan-block-title">In progress</div>
+          <div class="port-row"><span class="port-id">8000/tcp</span><span class="port-name">Active Directory &amp; pivoting</span><span class="port-status filtered">FILTERED</span></div>
+          <div class="port-row"><span class="port-id">8001/tcp</span><span class="port-name">OSCP+ methodology</span><span class="port-status filtered">FILTERED</span></div>
+        </div>
       </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         PROFILE
-    ======================================================== -->
-
-    <section id="about">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-index">01</span>
-
-          <div>
-            <div class="section-kicker">
-              /etc/profile
-            </div>
-
-            <h2>
-              Operator Profile
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="profile-grid">
-
-          <div class="profile-text panel reveal">
-
-            <div class="panel-top">
-              cat operator_profile.txt
-            </div>
-
-            <div class="panel-body">
-
-              <p>
-                I'm Mohamed, a cybersecurity student building a
-                practical foundation in
-                <strong>penetration testing and offensive security</strong>.
-              </p>
-
-              <p>
-                My focus is not just learning tools. I work on
-                understanding the complete attack path:
-                reconnaissance, enumeration, exploitation,
-                privilege escalation, lateral movement and
-                pivoting.
-              </p>
-
-              <p>
-                For web security, I practice vulnerability classes
-                such as SQL injection, XSS, LFI, SSRF, XXE and
-                command injection through hands-on labs.
-              </p>
-
-              <p>
-                I also use programming with Python, PHP, JavaScript,
-                C++ and SQL to understand how vulnerable systems
-                are actually built.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="profile-side reveal">
-
-            <div class="metric">
-
-              <span class="metric-value">
-                eJPT
-              </span>
-
-              <span class="metric-label">
-                CURRENT TRACK
-              </span>
-
-            </div>
-
-            <div class="metric">
-
-              <span class="metric-value">
-                WEB
-              </span>
-
-              <span class="metric-label">
-                PRIMARY FOCUS
-              </span>
-
-            </div>
-
-            <div class="metric">
-
-              <span class="metric-value">
-                AD
-              </span>
-
-              <span class="metric-label">
-                NEXT-LAYER STUDY
-              </span>
-
-            </div>
-
-            <div class="metric">
-
-              <span class="metric-value">
-                24/7
-              </span>
-
-              <span class="metric-label">
-                LAB MINDSET
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         ARSENAL
-    ======================================================== -->
-
-    <section id="skills">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-index">02</span>
-
-          <div>
-            <div class="section-kicker">
-              /usr/bin
-            </div>
-
-            <h2>
-              Security Arsenal
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="arsenal-grid">
-
-
-          <div class="arsenal-card reveal">
-
-            <div class="arsenal-head">
-              <span>01</span>
-              RECON / ENUMERATION
-            </div>
-
-            <div class="arsenal-items">
-
-              <span>Nmap</span>
-              <span>Gobuster</span>
-              <span>FFUF</span>
-              <span>cURL</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="arsenal-card reveal">
-
-            <div class="arsenal-head">
-              <span>02</span>
-              WEB SECURITY
-            </div>
-
-            <div class="arsenal-items">
-
-              <span>Burp Suite</span>
-              <span>SQLi</span>
-              <span>XSS</span>
-              <span>LFI</span>
-              <span>SSRF</span>
-              <span>XXE</span>
-              <span>CMDi</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="arsenal-card reveal">
-
-            <div class="arsenal-head">
-              <span>03</span>
-              EXPLOITATION
-            </div>
-
-            <div class="arsenal-items">
-
-              <span>Metasploit</span>
-              <span>Hydra</span>
-              <span>Credential Auditing</span>
-              <span>Payload Analysis</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="arsenal-card reveal">
-
-            <div class="arsenal-head">
-              <span>04</span>
-              WINDOWS / AD
-            </div>
-
-            <div class="arsenal-items">
-
-              <span>Impacket</span>
-              <span>NetExec</span>
-              <span>SMB</span>
-              <span>FTP</span>
-              <span>Active Directory</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="arsenal-card reveal">
-
-            <div class="arsenal-head">
-              <span>05</span>
-              POST EXPLOITATION
-            </div>
-
-            <div class="arsenal-items">
-
-              <span>Linux PrivEsc</span>
-              <span>Windows PrivEsc</span>
-              <span>Lateral Movement</span>
-              <span>Credential Recovery</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="arsenal-card reveal">
-
-            <div class="arsenal-head">
-              <span>06</span>
-              PIVOTING
-            </div>
-
-            <div class="arsenal-items">
-
-              <span>Chisel</span>
-              <span>Proxychains</span>
-              <span>SOCKS5</span>
-              <span>Network Pivoting</span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         ENGAGEMENTS
-    ======================================================== -->
-
-    <section id="projects">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-index">03</span>
-
-          <div>
-            <div class="section-kicker">
-              /var/log/engagements
-            </div>
-
-            <h2>
-              Security Engagements
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="engagements">
-
-
-          <!-- OWL CORP -->
-
-          <article class="engagement featured reveal">
-
-            <div class="engagement-header">
-
-              <div>
-
-                <span class="case-id">
-                  CASE 001
-                </span>
-
-                <h3>
-                  OWL-CORP
-                </h3>
-
-                <span class="case-subtitle">
-                  Full-Chain Infrastructure Compromise
-                </span>
-
-              </div>
-
-              <span class="severity critical">
-                CRITICAL LAB
-              </span>
-
-            </div>
-
-
-            <p class="engagement-description">
-
-              Authorized enterprise-style penetration testing
-              simulation involving multiple Windows endpoints.
-              The objective was to demonstrate a complete attack
-              chain from initial access through internal pivoting
-              and final remote code execution.
-
-            </p>
-
-
-            <div class="attack-path">
-
-              <div class="attack-node">
-                <small>01</small>
-                Initial Access
-              </div>
-
-              <div class="arrow">→</div>
-
-              <div class="attack-node">
-                <small>02</small>
-                FTP Auth
-              </div>
-
-              <div class="arrow">→</div>
-
-              <div class="attack-node">
-                <small>03</small>
-                Credential Recovery
-              </div>
-
-              <div class="arrow">→</div>
-
-              <div class="attack-node">
-                <small>04</small>
-                Lateral Movement
-              </div>
-
-              <div class="arrow">→</div>
-
-              <div class="attack-node">
-                <small>05</small>
-                SOCKS5 Pivot
-              </div>
-
-              <div class="arrow">→</div>
-
-              <div class="attack-node final">
-                <small>06</small>
-                RCE
-              </div>
-
-            </div>
-
-
-            <div class="engagement-bottom">
-
-              <div class="tags">
-                <span>Kali Linux</span>
-                <span>Hydra</span>
-                <span>Impacket</span>
-                <span>Chisel</span>
-                <span>Proxychains</span>
-                <span>NetExec</span>
-              </div>
-
-              <a href="#" class="case-link">
-                CASE STUDY →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- PORTSWIGGER -->
-
-          <article class="engagement reveal">
-
-            <div class="engagement-header">
-
-              <div>
-
-                <span class="case-id">
-                  CASE 002
-                </span>
-
-                <h3>
-                  Web Application Security
-                </h3>
-
-                <span class="case-subtitle">
-                  PortSwigger Web Security Academy
-                </span>
-
-              </div>
-
-              <span class="severity high">
-                ACTIVE
-              </span>
-
-            </div>
-
-            <p class="engagement-description">
-
-              Hands-on web application security practice covering
-              injection, client-side attacks, server-side request
-              forgery, file inclusion and parser abuse.
-
-            </p>
-
-
-            <div class="finding-grid">
-
-              <div>
-                <span>SQLi</span>
-                <small>INJECTION</small>
-              </div>
-
-              <div>
-                <span>XSS</span>
-                <small>CLIENT-SIDE</small>
-              </div>
-
-              <div>
-                <span>SSRF</span>
-                <small>SERVER-SIDE</small>
-              </div>
-
-              <div>
-                <span>LFI</span>
-                <small>FILE ACCESS</small>
-              </div>
-
-              <div>
-                <span>XXE</span>
-                <small>XML PARSER</small>
-              </div>
-
-              <div>
-                <span>CMDi</span>
-                <small>OS COMMAND</small>
-              </div>
-
-            </div>
-
-            <div class="engagement-bottom">
-
-              <div class="tags">
-                <span>Burp Suite</span>
-                <span>HTTP</span>
-                <span>Web Testing</span>
-              </div>
-
-              <a
-                href="https://portswigger.net/web-security"
-                target="_blank"
-                rel="noopener"
-                class="case-link"
-              >
-                ACADEMY →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- LABS -->
-
-          <article class="engagement reveal">
-
-            <div class="engagement-header">
-
-              <div>
-
-                <span class="case-id">
-                  CASE 003
-                </span>
-
-                <h3>
-                  CTF / Vulnerable Machines
-                </h3>
-
-                <span class="case-subtitle">
-                  HTB / VulnHub / PicoCTF
-                </span>
-
-              </div>
-
-              <span class="severity medium">
-                ACTIVE
-              </span>
-
-            </div>
-
-            <p class="engagement-description">
-
-              Practical lab work focused on enumeration,
-              service exploitation, privilege escalation
-              and complete host compromise.
-
-            </p>
-
-
-            <div class="lab-flow">
-
-              <span>
-                RECON
-              </span>
-
-              <b>→</b>
-
-              <span>
-                ENUM
-              </span>
-
-              <b>→</b>
-
-              <span>
-                EXPLOIT
-              </span>
-
-              <b>→</b>
-
-              <span>
-                PRIVESC
-              </span>
-
-              <b>→</b>
-
-              <span class="root">
-                ROOT
-              </span>
-
-            </div>
-
-
-            <div class="engagement-bottom">
-
-              <div class="tags">
-                <span>HTB</span>
-                <span>VulnHub</span>
-                <span>PicoCTF</span>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- SECURE APP -->
-
-          <article class="engagement reveal">
-
-            <div class="engagement-header">
-
-              <div>
-
-                <span class="case-id">
-                  CASE 004
-                </span>
-
-                <h3>
-                  Secure Assignment System
-                </h3>
-
-                <span class="case-subtitle">
-                  Node.js / Express Security Project
-                </span>
-
-              </div>
-
-              <span class="severity low">
-                DEVELOPMENT
-              </span>
-
-            </div>
-
-            <p class="engagement-description">
-
-              Full-stack application built with security controls
-              including password hashing, security headers,
-              CSRF protection, rate limiting, session management
-              and controlled file uploads.
-
-            </p>
-
-            <div class="tags large-tags">
-
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>SQLite</span>
-              <span>bcrypt</span>
-              <span>Helmet</span>
-              <span>CSRF</span>
-              <span>Rate Limiting</span>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         CERTIFICATIONS
-    ======================================================== -->
-
-    <section id="certifications">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-index">04</span>
-
-          <div>
-            <div class="section-kicker">
-              /home/mohamed/certificates
-            </div>
-
-            <h2>
-              Certifications
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="cert-list">
-
-
-          <article class="certificate reveal">
-
-            <div class="cert-number">
-              01
-            </div>
-
-            <div class="cert-main">
-
-              <h3>
-                eJPT v2
-              </h3>
-
-              <span>
-                INE / eLearnSecurity
-              </span>
-
-              <p>
-                Junior penetration testing certification track.
-              </p>
-
-            </div>
-
-            <div class="cert-side">
-
-              <span class="cert-status progress">
-                IN PROGRESS
-              </span>
-
-              <a
-                href="#"
-                class="cert-view disabled"
-                onclick="return false;"
-              >
-                CERTIFICATE →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article class="certificate reveal">
-
-            <div class="cert-number">
-              02
-            </div>
-
-            <div class="cert-main">
-
-              <h3>
-                Web Security Academy
-              </h3>
-
-              <span>
-                PortSwigger
-              </span>
-
-              <p>
-                Hands-on web application security laboratory work.
-              </p>
-
-            </div>
-
-            <div class="cert-side">
-
-              <span class="cert-status ongoing">
-                ONGOING
-              </span>
-
-              <a
-                href="https://portswigger.net/web-security"
-                target="_blank"
-                rel="noopener"
-                class="cert-view"
-              >
-                VIEW LABS →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article class="certificate reveal">
-
-            <div class="cert-number">
-              03
-            </div>
-
-            <div class="cert-main">
-
-              <h3>
-                OSCP+
-              </h3>
-
-              <span>
-                OffSec
-              </span>
-
-              <p>
-                Long-term professional penetration testing target.
-              </p>
-
-            </div>
-
-            <div class="cert-side">
-
-              <span class="cert-status planned">
-                PLANNED
-              </span>
-
-              <span class="cert-view disabled">
-                TARGET →
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!--
-          =====================================================
-          ADD YOUR FUTURE CERTIFICATE
-          =====================================================
-
-          <article class="certificate reveal">
-
-            <div class="cert-number">
-              04
-            </div>
-
-            <div class="cert-main">
-
-              <h3>
-                CERTIFICATE NAME
-              </h3>
-
-              <span>
-                ISSUER
-              </span>
-
-              <p>
-                Certificate description.
-              </p>
-
-            </div>
-
-            <div class="cert-side">
-
-              <span class="cert-status verified">
-                VERIFIED
-              </span>
-
-              <a
-                href="certificates/certificate.pdf"
-                target="_blank"
-                class="cert-view"
-              >
-                VIEW CERTIFICATE →
-              </a>
-
-            </div>
-
-          </article>
-
-          =====================================================
-          -->
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         METHODOLOGY
-    ======================================================== -->
-
-    <section id="methodology">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-index">05</span>
-
-          <div>
-            <div class="section-kicker">
-              /opt/attack-chain
-            </div>
-
-            <h2>
-              Testing Methodology
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="methodology-grid reveal">
-
-          <div class="method-command">
-
-            <div class="method-command-top">
-              ~/methodology.sh
-            </div>
-
-            <div class="method-terminal">
-
-              <div>
-                <span class="green">$</span>
-                ./pentest.sh --authorized
-              </div>
-
-              <div class="method-output">
-                [01] Reconnaissance ........ OK
-              </div>
-
-              <div class="method-output">
-                [02] Enumeration .......... OK
-              </div>
-
-              <div class="method-output">
-                [03] Exploitation ......... OK
-              </div>
-
-              <div class="method-output">
-                [04] Privilege Escalation . OK
-              </div>
-
-              <div class="method-output">
-                [05] Lateral Movement ..... OK
-              </div>
-
-              <div class="method-output">
-                [06] Pivoting ............. OK
-              </div>
-
-              <div class="method-output">
-                [07] Reporting ............ OK
-              </div>
-
-              <div class="method-success">
-                Assessment complete.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="method-list">
-
-            <div class="method-item">
-
-              <span>01</span>
-
-              <div>
-                <strong>Reconnaissance</strong>
-                <p>
-                  Identify hosts, technologies and exposed attack surface.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="method-item">
-
-              <span>02</span>
-
-              <div>
-                <strong>Enumeration</strong>
-                <p>
-                  Map services, endpoints, users and attack vectors.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="method-item">
-
-              <span>03</span>
-
-              <div>
-                <strong>Exploitation</strong>
-                <p>
-                  Validate vulnerabilities through controlled exploitation.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="method-item">
-
-              <span>04</span>
-
-              <div>
-                <strong>Privilege Escalation</strong>
-                <p>
-                  Identify paths from low privilege to higher authority.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="method-item">
-
-              <span>05</span>
-
-              <div>
-                <strong>Pivoting</strong>
-                <p>
-                  Reach internal network segments through controlled pivots.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="method-item">
-
-              <span>06</span>
-
-              <div>
-                <strong>Reporting</strong>
-                <p>
-                  Document impact, evidence and remediation.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         CONTACT
-    ======================================================== -->
-
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <span class="section-index">06</span>
-
-          <div>
-            <div class="section-kicker">
-              /etc/contact
-            </div>
-
-            <h2>
-              Establish Contact
-            </h2>
-          </div>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-
-          <div class="contact-message panel reveal">
-
-            <div class="panel-top">
-              send_packet.sh
-            </div>
-
-            <div class="panel-body">
-
-              <div class="contact-code">
-
-                <div>
-                  <span class="green">user</span>
-                  =
-                  <span>"security.team"</span>
-                </div>
-
-                <div>
-                  <span class="green">purpose</span>
-                  =
-                  <span>"pentest / collaboration"</span>
-                </div>
-
-                <div>
-                  <span class="green">channel</span>
-                  =
-                  <span>"choose_endpoint"</span>
-                </div>
-
-                <div class="ready">
-                  STATUS = READY
-                </div>
-
-              </div>
-
-              <p>
-                For cybersecurity projects, collaboration,
-                junior opportunities or security discussions,
-                use any of the endpoints below.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="contact-endpoints reveal">
-
-
-            <a
-              href="https://github.com/MohamedSM"
-              target="_blank"
-              rel="noopener"
-              class="endpoint"
-            >
-
-              <div class="endpoint-icon">
-                GH
-              </div>
-
-              <div>
-
-                <small>
-                  GITHUB
-                </small>
-
-                <strong>
-                  github.com/MohamedSM
-                </strong>
-
-              </div>
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <!-- CHANGE THIS LINK -->
-
-            <a
-              href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
-              target="_blank"
-              rel="noopener"
-              class="endpoint"
-            >
-
-              <div class="endpoint-icon">
-                IN
-              </div>
-
-              <div>
-
-                <small>
-                  LINKEDIN
-                </small>
-
-                <strong>
-                  Connect with me
-                </strong>
-
-              </div>
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <!-- CHANGE THIS EMAIL -->
-
-            <a
-              href="mailto:YOUR_EMAIL@example.com"
-              class="endpoint"
-            >
-
-              <div class="endpoint-icon">
-                @
-              </div>
-
-              <div>
-
-                <small>
-                  EMAIL
-                </small>
-
-                <strong>
-                  YOUR_EMAIL@example.com
-                </strong>
-
-              </div>
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <!-- ADD YOUR CV -->
-
-            <a
-              href="resume.pdf"
-              target="_blank"
-              rel="noopener"
-              class="endpoint"
-            >
-
-              <div class="endpoint-icon">
-                CV
-              </div>
-
-              <div>
-
-                <small>
-                  RESUME
-                </small>
-
-                <strong>
-                  View / Download CV
-                </strong>
-
-              </div>
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
-  <footer>
-
-    <div class="container footer">
-
-      <span>
-        <span data-year></span>
-        MohamedSM
-      </span>
-
-      <span>
-        AUTHORIZED SECURITY RESEARCH
-      </span>
-
-      <span>
-        TLP:CLEAR
-      </span>
-
     </div>
+  </section>
 
-  </footer>
+  <section id="engagements">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Engagement Log</span></div>
+      <p class="sec-sub reveal">Case files from security work I've shipped.</p>
+      <div class="case-grid">
+        <div class="card case reveal">
+          <div class="case-head">
+            <span class="case-id">ENG-001</span>
+            <span class="case-status">SHIPPED</span>
+          </div>
+          <div class="case-title">90-Day Pentest Roadmap</div>
+          <p class="case-desc">A self-built study platform mapping the road to eJPT v2 and OSCP+ across five phases — recon, exploitation, privilege escalation, AD/pivoting, and exam prep — developed with cybersecurity trainer Saif Makharzah. Progress-tracked and built around free-only resources.</p>
+          <div class="case-stack"><span class="chip">HTML/CSS/JS</span><span class="chip">Progress tracking</span><span class="chip">Offline-first</span></div>
+        </div>
 
+        <div class="card case reveal">
+          <div class="case-head">
+            <span class="case-id">ENG-002</span>
+            <span class="case-status">SHIPPED</span>
+          </div>
+          <div class="case-title">Mobile Pentest Roadmap</div>
+          <p class="case-desc">A companion web app covering Android and iOS security across 16 structured stages, built as a standalone learning reference for mobile attack surfaces.</p>
+          <div class="case-stack"><span class="chip">Web App</span><span class="chip">Android/iOS</span><span class="chip">16 stages</span></div>
+        </div>
 
-  <script src="script.js"></script>
+        <div class="card case reveal">
+          <div class="case-head">
+            <span class="case-id">ENG-003</span>
+            <span class="case-status">SHIPPED</span>
+          </div>
+          <div class="case-title">University Assignment Submission System</div>
+          <p class="case-desc">A full-stack Node.js/Express + SQLite platform built with security as a first-class concern: bcrypt password hashing, Helmet security headers, CSRF protection, rate limiting, Multer file-upload handling, and proper session management.</p>
+          <div class="case-stack"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">SQLite</span><span class="chip">bcrypt</span><span class="chip">CSRF protection</span><span class="chip">Rate limiting</span></div>
+        </div>
 
+        <!--
+          ADD MORE CASE FILES HERE.
+          Copy one .card.case block above, update the ID, title, description, and stack chips.
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section id="writeups">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Writeups</span></div>
+      <p class="sec-sub reveal">CTF challenges and lab walkthroughs — published as they're written.</p>
+
+      <div class="card writeup-placeholder reveal">
+        <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/></svg>
+        <div>
+          <div class="writeup-title">No writeups published yet</div>
+          <div class="writeup-sub">First lab writeup lands after the current PortSwigger module wraps.</div>
+        </div>
+      </div>
+      <!--
+        WHEN YOU PUBLISH A WRITEUP, replace the placeholder .writeup-placeholder card
+        above with entries like this (copy, fill in, repeat):
+
+        <div class="card writeup-row reveal">
+          <div class="writeup-row-head">
+            <span class="writeup-tag">CTF</span>
+            <span class="writeup-date">Month Year</span>
+          </div>
+          <div class="writeup-row-title">Challenge or box name</div>
+          <p class="writeup-row-desc">One or two lines on the vulnerability class and approach.</p>
+          <a class="writeup-link" href="#">Read writeup &rarr;</a>
+        </div>
+      -->
+    </div>
+  </section>
+
+  <section id="methodology">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Methodology</span></div>
+      <p class="sec-sub reveal">The certification path — eJPT v2 now, OSCP+ next.</p>
+
+      <div class="reveal">
+        <div class="progress-label"><span>eJPT v2 → OSCP+ track</span><span>Phase 1 of 5</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+
+      <div class="card phase-list reveal">
+        <div class="phase active">
+          <div class="phase-marker">01</div>
+          <div>
+            <div class="phase-name">Scanning &amp; Enumeration</div>
+            <div class="phase-desc">Reconnaissance fundamentals on Metasploitable 2 and PortSwigger labs.</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-marker">02</div>
+          <div>
+            <div class="phase-name">Exploitation</div>
+            <div class="phase-desc">Manual exploitation techniques tied directly to eJPT v2 course material.</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-marker">03</div>
+          <div>
+            <div class="phase-name">Privilege Escalation</div>
+            <div class="phase-desc">Linux and Windows privilege escalation paths, chained into full compromise scenarios.</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-marker">04</div>
+          <div>
+            <div class="phase-name">Active Directory &amp; Pivoting</div>
+            <div class="phase-desc">VulnHub Vulnerable AD v2 for domain attacks, lateral movement, and pivoting.</div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-marker">05</div>
+          <div>
+            <div class="phase-name">OSCP+ Preparation</div>
+            <div class="phase-desc">Guided by MrLimbo's OSCP+ 2026 playlist, building toward exam-day readiness.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Contact</span></div>
+      <div class="card contact-panel reveal">
+        <div>
+          <div class="contact-headline">Open to bug bounty programs, freelance work, and junior penetration testing roles.</div>
+          <div class="contact-sub">Reach out — I respond to every message.</div>
+        </div>
+        <!--
+          Update the links below with your real profiles.
+          Remove any row (TryHackMe / HackTheBox) you don't use.
+        -->
+        <div class="contact-links">
+          <a href="https://github.com/MohamedSM" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:you@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://tryhackme.com/p/your-username" target="_blank" rel="noopener">TryHackMe</a>
+          <a href="https://app.hackthebox.com/profile/your-id" target="_blank" rel="noopener">HackTheBox</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Mohamed — TLP:CLEAR // end of report</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
-```

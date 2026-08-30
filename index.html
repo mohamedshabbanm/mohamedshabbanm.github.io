@@ -32,8 +32,6 @@
   =====================================================================
 -->
 
-<canvas id="matrixCanvas" class="matrix-bg" aria-hidden="true"></canvas>
-
 <header>
   <nav class="wrap">
     <div class="logo">mohamed<span class="dim">@</span>sec<span class="logo-cursor"></span></div>
@@ -110,7 +108,7 @@
         <div class="card-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>About Me</div>
         <div class="about-body" id="aboutBody">
           <p>I'm a highly motivated aspiring penetration tester with a strong technical foundation in <strong>PHP, C++, and Python</strong>. I focus on web application security — finding logic flaws, chaining vulnerabilities, and understanding systems well enough to break them responsibly.</p>
-          <p class="about-more">My practical work is anchored in <strong>PortSwigger Web Security Academy</strong>, where I've built hands-on experience across SQL injection, XSS, LFI, SSRF, XXE, and command injection. I'm currently working through the eJPT v2 certification, with OSCP+ as my next milestone, following a structured five-phase roadmap covering scanning and enumeration through Active Directory pivoting.</p>
+          <p class="about-more">My practical work is anchored in <strong>PortSwigger Web Security Academy</strong>, where I've built hands-on experience across SQL injection, XSS, LFI, SSRF, XXE, and command injection. I'm currently working through the eJPT v2 certification, with OSCP+ as my next milestone, following a structured five-phase roadmap covering scanning and enumeration through Active Directory pivoting. Alongside application-layer testing, I'm building foundational <strong>AWS and cloud security</strong> knowledge — IAM, S3 exposure, network hardening, and logging — since most of what I test now runs on cloud infrastructure.</p>
           <p class="about-more">I train against deliberately vulnerable targets — Metasploitable 2 and VulnHub's Vulnerable AD v2 — and I build the tooling to support that study rather than just consuming courses. I'm open to bug bounty programs, freelance work, and junior penetration testing roles.</p>
         </div>
         <button class="show-more-btn" id="showMoreBtn" aria-expanded="false">
@@ -149,6 +147,13 @@
             <div class="cert-issuer">PortSwigger</div>
           </div>
           <span class="cert-status ongoing">ONGOING</span>
+        </div>
+        <div class="cert-row">
+          <div class="cert-main">
+            <div class="cert-name">AWS Cloud Security — IAM, S3, VPC, and logging fundamentals</div>
+            <div class="cert-issuer">AWS / self-study</div>
+          </div>
+          <span class="cert-status planned">PLANNED</span>
         </div>
 
         <!--
@@ -198,6 +203,15 @@
           <div class="scan-block-title">Practice ranges</div>
           <div class="port-row"><span class="port-id">22/tcp</span><span class="port-name">Metasploitable 2 — core exploitation</span><span class="port-status open">OPEN</span></div>
           <div class="port-row"><span class="port-id">88/tcp</span><span class="port-name">Vulnerable AD v2 (VulnHub) — Active Directory</span><span class="port-status open">OPEN</span></div>
+        </div>
+
+        <div class="scan-block">
+          <div class="scan-block-title">Cloud &amp; AWS security</div>
+          <!-- Update these as your AWS/cloud security work matures -->
+          <div class="port-row"><span class="port-id">3306/tcp</span><span class="port-name">IAM policy review &amp; least-privilege audits</span><span class="port-status filtered">FILTERED</span></div>
+          <div class="port-row"><span class="port-id">3307/tcp</span><span class="port-name">S3 bucket misconfiguration &amp; exposure checks</span><span class="port-status filtered">FILTERED</span></div>
+          <div class="port-row"><span class="port-id">3308/tcp</span><span class="port-name">Security Groups / VPC network hardening</span><span class="port-status filtered">FILTERED</span></div>
+          <div class="port-row"><span class="port-id">3309/tcp</span><span class="port-name">CloudTrail &amp; GuardDuty logging review</span><span class="port-status filtered">FILTERED</span></div>
         </div>
 
         <div class="scan-block">

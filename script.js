@@ -4,13 +4,11 @@
   =====================================================================
   No content lives here — this file only wires up behavior:
   mobile menu, the About card's show more/less toggle, scroll-reveal
-  animations, the methodology progress bar, nav scroll-spy, and the
-  background matrix-rain effect. Edit index.html for text/content
-  changes and styles.css for appearance.
+  animations, the methodology progress bar, and nav scroll-spy.
+  Edit index.html for text/content changes and styles.css for
+  appearance.
   =====================================================================
 */
-
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ---------- mobile menu ----------
 const navtoggle = document.getElementById('navtoggle');
@@ -84,47 +82,3 @@ if (sections.length) {
   }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
   sections.forEach(sec => spyIO.observe(sec));
 }
-
-// ---------- matrix rain background ----------
-(function matrixRain() {
-  if (reduceMotion) return;
-
-  const canvas = document.getElementById('matrixCanvas');
-  if (!canvas || !canvas.getContext) return;
-  const ctx = canvas.getContext('2d');
-
-  const chars = 'アイウエオカキクケコサシスセソ01';
-  const fontSize = 15;
-  let columns, drops;
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    columns = Math.floor(canvas.width / fontSize);
-    drops = new Array(columns).fill(0).map(() => Math.floor(Math.random() * -40));
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function draw() {
-    ctx.fillStyle = 'rgba(9, 12, 16, 0.08)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.font = fontSize + 'px monospace';
-    ctx.fillStyle = '#39D97A';
-
-    for (let i = 0; i < drops.length; i++) {
-      const char = chars[Math.floor(Math.random() * chars.length)];
-      const x = i * fontSize;
-      const y = drops[i] * fontSize;
-      ctx.fillText(char, x, y);
-
-      if (y > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 60);
-})();

@@ -1,3 +1,15 @@
+/*
+  =====================================================================
+  MOHAMED — PENETRATION TESTER PORTFOLIO — INTERACTIVITY
+  =====================================================================
+  No content lives here — this file only wires up behavior:
+  mobile menu, the About card's show more/less toggle, scroll-reveal
+  animations, the methodology progress bar, nav scroll-spy, and the
+  background matrix-rain effect. Edit index.html for text/content
+  changes and styles.css for appearance.
+  =====================================================================
+*/
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ---------- mobile menu ----------

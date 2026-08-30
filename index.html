@@ -12,6 +12,26 @@
 </head>
 <body>
 
+<!--
+  =====================================================================
+  MOHAMED — PENETRATION TESTER PORTFOLIO
+  =====================================================================
+  Static site, no build step. Structure: index.html (this file),
+  styles.css (all styling), script.js (interactivity only).
+
+  QUICK CUSTOMIZATION CHECKLIST
+  1. Profile card (below, id="home")   -> name, title, email, social links, cv.pdf
+  2. Certifications (id="certifications") -> add real certificates as you earn them
+  3. Attack Surface (id="skills")      -> update as your skill set grows
+  4. Engagement Log (id="engagements") -> add new projects as case files
+  5. Writeups (id="writeups")          -> replace placeholder once you publish one
+  6. Contact (id="contact")            -> keep links in sync with the profile card
+
+  Each section below has its own comment marking where it starts and,
+  where relevant, an inline template showing exactly what to copy.
+  =====================================================================
+-->
+
 <canvas id="matrixCanvas" class="matrix-bg" aria-hidden="true"></canvas>
 
 <header>
@@ -42,10 +62,15 @@
 </header>
 
 <main>
+  <!-- ============================= HOME / PROFILE ============================= -->
   <section id="home" class="section-home">
     <div class="wrap">
 
-      <!-- Profile card -->
+      <!--
+        Profile card — this is the first thing visitors see.
+        To customize: swap the "M" avatar initial, name, handle, and title
+        line below. The email/location live in .meta-row a few lines down.
+      -->
       <div class="card profile-card reveal">
         <div class="avatar-wrap">
           <div class="avatar">M</div>
@@ -55,6 +80,7 @@
           <h1>Mohamed <span class="divider">|</span> <span class="accent">sec</span></h1>
           <div class="handle">@MohamedSM</div>
           <div class="title-line">Aspiring Penetration Tester</div>
+          <!-- Update location and email here -->
           <div class="meta-row">
             <span class="meta-item"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>Egypt</span>
             <span class="meta-sep">&middot;</span>
@@ -96,6 +122,7 @@
     </div>
   </section>
 
+  <!-- ============================= CERTIFICATIONS ============================= -->
   <section id="certifications">
     <div class="wrap">
       <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">Certifications &amp; Training</span></div>
@@ -142,6 +169,7 @@
     </div>
   </section>
 
+  <!-- ============================= SKILLS / ATTACK SURFACE ============================= -->
   <section id="skills">
     <div class="wrap">
       <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Attack Surface</span></div>
@@ -183,6 +211,7 @@
 
   <section id="engagements">
     <div class="wrap">
+      <!-- ============================= ENGAGEMENT LOG / PROJECTS ============================= -->
       <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Engagement Log</span></div>
       <p class="sec-sub reveal">Case files from security work I've shipped.</p>
       <div class="case-grid">
@@ -224,6 +253,7 @@
     </div>
   </section>
 
+  <!-- ============================= WRITEUPS ============================= -->
   <section id="writeups">
     <div class="wrap">
       <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Writeups</span></div>
@@ -253,6 +283,7 @@
     </div>
   </section>
 
+  <!-- ============================= METHODOLOGY / CERT ROADMAP ============================= -->
   <section id="methodology">
     <div class="wrap">
       <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Methodology</span></div>
@@ -303,6 +334,7 @@
     </div>
   </section>
 
+  <!-- ============================= CONTACT ============================= -->
   <section id="contact">
     <div class="wrap">
       <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Contact</span></div>

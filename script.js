@@ -11,11 +11,11 @@ if (navtoggle && mobilemenu) {
         if (opened) {
             mobilemenu.setAttribute("hidden", "");
             navtoggle.setAttribute("aria-expanded", "false");
-            navtoggle.textContent = "MENU";
+            navtoggle.textContent = "[MENU]";
         } else {
             mobilemenu.removeAttribute("hidden");
             navtoggle.setAttribute("aria-expanded", "true");
-            navtoggle.textContent = "CLOSE";
+            navtoggle.textContent = "[CLOSE]";
         }
     });
 
@@ -23,7 +23,7 @@ if (navtoggle && mobilemenu) {
         link.addEventListener("click", () => {
             mobilemenu.setAttribute("hidden", "");
             navtoggle.setAttribute("aria-expanded", "false");
-            navtoggle.textContent = "MENU";
+            navtoggle.textContent = "[MENU]";
         });
     });
 }
@@ -102,48 +102,66 @@ if (sections.length && "IntersectionObserver" in window) {
 }
 
 // =========================================================
-// CERTIFICATE HORIZONTAL SCROLL (DRAG + WHEEL)
+// CERTIFICATE HORIZONTAL SCROLL (DRAG, WHEEL, & ARROWS)
 // =========================================================
-const certificatesScroll = document.getElementById("certificatesScroll");
-let isDragging = false;
-let startX = 0;
-let scrollLeft = 0;
-let dragThreshold = false;
+const scrollContainer = document.getElementById("certificatesScroll");
+const certPrev = document.getElementById("certPrev");
+const certNext = document.getElementById("certNext");
 
-if (certificatesScroll) {
-    // Wheel horizontal scroll
-    certificatesScroll.addEventListener("wheel", (event) => {
-        if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
-            event.preventDefault();
-            certificatesScroll.scrollLeft += event.deltaY * 1.5;
+let isMouseDown = false;
+let startX = 0;
+let scrollStartLeft = 0;
+let isDragging = false;
+
+if (scrollContainer) {
+    // 1. Arrow Button Controls
+    if (certPrev && certNext) {
+        certPrev.addEventListener("click", () => {
+            scrollContainer.scrollBy({ left: -360, behavior: "smooth" });
+        });
+        certNext.addEventListener("click", () => {
+            scrollContainer.scrollBy({ left: 360, behavior: "smooth" });
+        });
+    }
+
+    // 2. Mouse Wheel Scroll Horizontal Conversion
+    scrollContainer.addEventListener("wheel", (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            scrollContainer.scrollLeft += e.deltaY * 1.5;
         }
     }, { passive: false });
 
-    // Mouse Drag To Scroll
-    certificatesScroll.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        dragThreshold = false;
-        startX = e.pageX - certificatesScroll.offsetLeft;
-        scrollLeft = certificatesScroll.scrollLeft;
-    });
-
-    certificatesScroll.addEventListener("mouseleave", () => {
+    // 3. Mouse Drag-to-Scroll Logic
+    scrollContainer.addEventListener("mousedown", (e) => {
+        isMouseDown = true;
         isDragging = false;
+        scrollContainer.style.cursor = "grabbing";
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollStartLeft = scrollContainer.scrollLeft;
     });
 
-    certificatesScroll.addEventListener("mouseup", () => {
-        isDragging = false;
+    scrollContainer.addEventListener("mouseleave", () => {
+        isMouseDown = false;
+        scrollContainer.style.cursor = "grab";
     });
 
-    certificatesScroll.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        const x = e.pageX - certificatesScroll.offsetLeft;
-        const walk = (x - startX) * 2;
-        if (Math.abs(walk) > 6) {
-            dragThreshold = true;
+    scrollContainer.addEventListener("mouseup", () => {
+        isMouseDown = false;
+        scrollContainer.style.cursor = "grab";
+    });
+
+    scrollContainer.addEventListener("mousemove", (e) => {
+        if (!isMouseDown) return;
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2.2;
+
+        if (Math.abs(walk) > 8) {
+            isDragging = true;
         }
+
         e.preventDefault();
-        certificatesScroll.scrollLeft = scrollLeft - walk;
+        scrollContainer.scrollLeft = scrollStartLeft - walk;
     });
 }
 
@@ -177,10 +195,10 @@ function closeCertificate() {
 }
 
 certificateCards.forEach(card => {
-    card.addEventListener("click", (e) => {
-        // Prevent opening popup if user was dragging the carousel
-        if (dragThreshold) {
-            dragThreshold = false;
+    card.addEventListener("click", () => {
+        // Prevent opening popup modal if the user was dragging the slider
+        if (isDragging) {
+            isDragging = false;
             return;
         }
 
@@ -190,13 +208,8 @@ certificateCards.forEach(card => {
     });
 });
 
-if (modalClose) {
-    modalClose.addEventListener("click", closeCertificate);
-}
-
-if (modalOverlay) {
-    modalOverlay.addEventListener("click", closeCertificate);
-}
+if (modalClose) modalClose.addEventListener("click", closeCertificate);
+if (modalOverlay) modalOverlay.addEventListener("click", closeCertificate);
 
 document.addEventListener("keydown", (event) => {
     if (
@@ -216,7 +229,7 @@ window.addEventListener("resize", () => {
         mobilemenu.setAttribute("hidden", "");
         if (navtoggle) {
             navtoggle.setAttribute("aria-expanded", "false");
-            navtoggle.textContent = "MENU";
+            navtoggle.textContent = "[MENU]";
         }
     }
 });

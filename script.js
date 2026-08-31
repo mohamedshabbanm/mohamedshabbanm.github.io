@@ -1,11 +1,12 @@
-/*
-  =====================================================================
-  MOHAMED — PENETRATION TESTER PORTFOLIO — INTERACTIVITY
-  =====================================================================
-*/
+// =========================================================
+// MOHAMED — PENETRATION TESTER PORTFOLIO
+// INTERACTIVITY
+// =========================================================
 
 
-// ---------- mobile menu ----------
+// =========================================================
+// MOBILE MENU
+// =========================================================
 
 const navtoggle = document.getElementById('navtoggle');
 const mobilemenu = document.getElementById('mobilemenu');
@@ -65,8 +66,9 @@ if (navtoggle && mobilemenu) {
 }
 
 
-
-// ---------- about card show more / less ----------
+// =========================================================
+// ABOUT — SHOW MORE / SHOW LESS
+// =========================================================
 
 const showMoreBtn =
   document.getElementById('showMoreBtn');
@@ -87,67 +89,74 @@ if (showMoreBtn && aboutCard) {
       String(expanded)
     );
 
+    const textNode =
+      Array.from(showMoreBtn.childNodes)
+        .find(node => node.nodeType === Node.TEXT_NODE);
 
-    showMoreBtn.lastChild.textContent =
-      expanded
-        ? ' Show less'
-        : ' Show more';
+    if (textNode) {
+
+      textNode.textContent =
+        expanded
+          ? ' Show less'
+          : ' Show more';
+
+    }
 
   });
 
 }
 
 
-
-// ---------- scroll reveal ----------
+// =========================================================
+// SCROLL REVEAL
+// =========================================================
 
 const revealEls =
   document.querySelectorAll('.reveal');
 
 
-if (revealEls.length) {
+const io =
+  new IntersectionObserver(
+    (entries) => {
 
-  const io =
-    new IntersectionObserver(
-      (entries) => {
+      entries.forEach(entry => {
 
-        entries.forEach(entry => {
+        if (entry.isIntersecting) {
 
-          if (entry.isIntersecting) {
+          entry.target.classList.add(
+            'in-view'
+          );
 
-            entry.target.classList.add(
-              'in-view'
-            );
+          io.unobserve(
+            entry.target
+          );
 
-            io.unobserve(
-              entry.target
-            );
+        }
 
-          }
+      });
 
-        });
-
-      },
-      {
-        threshold:0.15
-      }
-    );
+    },
+    {
+      threshold:0.15
+    }
+  );
 
 
-  revealEls.forEach(el => {
+revealEls.forEach(el => {
 
-    io.observe(el);
+  io.observe(el);
 
-  });
-
-}
+});
 
 
-
-// ---------- progress bar ----------
+// =========================================================
+// PROGRESS BAR
+// =========================================================
 
 const progressFill =
-  document.getElementById('progressFill');
+  document.getElementById(
+    'progressFill'
+  );
 
 
 if (progressFill) {
@@ -161,7 +170,7 @@ if (progressFill) {
           if (entry.isIntersecting) {
 
             progressFill.style.width =
-              '20%';
+              '82%';
 
             progressIO.unobserve(
               entry.target
@@ -185,8 +194,9 @@ if (progressFill) {
 }
 
 
-
-// ---------- scroll spy ----------
+// =========================================================
+// NAVIGATION SCROLL SPY
+// =========================================================
 
 const navLinks =
   document.querySelectorAll(
@@ -217,7 +227,6 @@ if (sections.length) {
               `.navlinks a[href="#${entry.target.id}"]`
             );
 
-
           if (!link) {
             return;
           }
@@ -231,7 +240,6 @@ if (sections.length) {
                   'active'
                 )
             );
-
 
             link.classList.add(
               'active'
@@ -253,7 +261,9 @@ if (sections.length) {
 
   sections.forEach(section => {
 
-    spyIO.observe(section);
+    spyIO.observe(
+      section
+    );
 
   });
 

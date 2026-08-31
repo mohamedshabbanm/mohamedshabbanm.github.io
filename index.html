@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mohamed — Penetration Tester Portfolio</title>
+<title>Mohamed Shabban — Penetration Tester Portfolio</title>
 
 <meta
   name="description"
-  content="Mohamed — Aspiring Penetration Tester focused on web application security, network security, vulnerability assessment, and offensive security."
+  content="Mohamed Shabban — Aspiring Penetration Tester focused on web application security, network security, Windows, Active Directory, and offensive security."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +24,17 @@
 
 <body>
 
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <header>
 
   <nav class="wrap">
 
     <div class="logo">
-      mohamed<span class="dim">@</span>sec<span class="logo-cursor"></span>
+      mohamed<span class="dim">@</span>sec
+      <span class="logo-cursor"></span>
     </div>
 
     <div class="navlinks" id="navlinks">
@@ -59,10 +64,17 @@
         Skills
       </a>
 
+      <a href="#projects" data-nav>
+        <svg viewBox="0 0 24 24">
+          <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+        </svg>
+        Projects
+      </a>
+
       <a href="#writeups" data-nav>
         <svg viewBox="0 0 24 24">
           <path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/>
-          <path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2 2z"/>
+          <path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/>
         </svg>
         Writeups
       </a>
@@ -97,14 +109,13 @@
   </nav>
 
   <div class="mobilemenu" id="mobilemenu" hidden>
-
     <a href="#home">Home</a>
     <a href="#certifications">Certifications</a>
     <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#writeups">Writeups</a>
     <a href="#methodology">Methodology</a>
     <a href="#contact">Contact</a>
-
   </div>
 
 </header>
@@ -112,794 +123,121 @@
 
 <main>
 
-  <!-- ============================= HOME ============================= -->
+<!-- =========================================================
+     HOME
+========================================================= -->
 
-  <section id="home" class="section-home">
+<section id="home" class="section-home">
 
-    <div class="wrap">
+  <div class="wrap">
 
-      <div class="card profile-card reveal">
+    <div class="card profile-card reveal">
 
-        <div class="avatar-wrap">
+      <div class="avatar-wrap">
 
-          <div class="avatar">M</div>
+        <div class="avatar">
+          M
+        </div>
 
-          <span
-            class="avatar-status"
-            title="Available for opportunities"
-          ></span>
+        <span
+          class="avatar-status"
+          title="Available for opportunities"
+        ></span>
+
+      </div>
+
+      <div class="profile-info">
+
+        <h1>
+          Mohamed
+          <span class="divider">|</span>
+          <span class="accent">sec</span>
+        </h1>
+
+        <div class="handle">
+          @MohamedSM
+        </div>
+
+        <div class="title-line">
+          Aspiring Penetration Tester
+        </div>
+
+        <div class="meta-row">
+
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/>
+              <circle cx="12" cy="9" r="2.3"/>
+            </svg>
+            Egypt
+          </span>
+
+          <span class="meta-sep">
+            &middot;
+          </span>
+
+          <span class="meta-item">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="M3 7l9 6 9-6"/>
+            </svg>
+            mohamedworkoff@gmail.com
+          </span>
 
         </div>
 
 
-        <div class="profile-info">
+        <div class="profile-actions">
 
-          <h1>
-            Mohamed
-            <span class="divider">|</span>
-            <span class="accent">sec</span>
-          </h1>
-
-          <div class="handle">@MohamedSM</div>
-
-          <div class="title-line">
-            Aspiring Penetration Tester
-          </div>
-
-
-          <div class="meta-row">
-
-            <span class="meta-item">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/>
-                <circle cx="12" cy="9" r="2.3"/>
-              </svg>
-
-              Egypt
-
-            </span>
-
-
-            <span class="meta-sep">&middot;</span>
-
-
-            <span class="meta-item">
-
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="5" width="18" height="14" rx="2"/>
-                <path d="M3 7l9 6 9-6"/>
-              </svg>
-
-              Open to opportunities
-
-            </span>
-
-          </div>
-
-
-          <div class="profile-actions">
-
-            <div class="social-row">
-
-              <a
-                class="social-icon"
-                href="https://github.com/MohamedSM"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-              >
-                GH
-              </a>
-
-
-              <a
-                class="social-icon"
-                href="https://www.linkedin.com/in/mohamed-shabban-b28174344"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-              >
-                IN
-              </a>
-
-
-              <a
-                class="social-icon"
-                href="mailto:mohamedworkoff@gmail.com"
-                aria-label="Email"
-              >
-                @
-              </a>
-
-            </div>
-
+          <div class="social-row">
 
             <a
-              class="btn btn-primary"
-              href="cv.pdf"
-              download
-            >
-
-              <svg viewBox="0 0 24 24">
-                <path d="M12 3v12"/>
-                <path d="M7 10l5 5 5-5"/>
-                <path d="M5 21h14"/>
-              </svg>
-
-              Download CV
-
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- ============================= ABOUT ============================= -->
-
-      <div class="card about-card reveal">
-
-        <div class="card-title">
-
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
-          </svg>
-
-          About Me
-
-        </div>
-
-
-        <div class="about-body" id="aboutBody">
-
-          <p>
-            I'm a highly motivated aspiring penetration tester with a strong
-            technical foundation in <strong>Python, PHP, C++, JavaScript,
-            and Node.js</strong>. I focus on web application security,
-            network security, vulnerability assessment, and understanding
-            systems well enough to identify and responsibly exploit security
-            weaknesses.
-          </p>
-
-
-          <p class="about-more">
-
-            My practical security training includes hands-on work with
-            <strong>OWASP Top 10</strong> vulnerabilities, PortSwigger Web
-            Security Academy, Linux and Windows environments, network
-            enumeration, exploitation, and privilege escalation.
-
-          </p>
-
-
-          <p class="about-more">
-
-            I regularly work with tools such as
-            <strong>Nmap, Burp Suite, FFUF, Gobuster, Metasploit,
-            Hydra, NetExec, Impacket, Proxychains, and Chisel</strong>.
-            I'm currently progressing through the eJPT v2 path while
-            strengthening my Active Directory, network penetration testing,
-            and cloud security foundations.
-
-          </p>
-
-
-          <p class="about-more">
-
-            I train against deliberately vulnerable environments and focus
-            on building practical skills through labs, CTFs, vulnerability
-            research, and security-focused projects.
-
-          </p>
-
-        </div>
-
-
-        <button
-          class="show-more-btn"
-          id="showMoreBtn"
-          aria-expanded="false"
-        >
-
-          <svg viewBox="0 0 24 24">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-
-          Show more
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ============================= CERTIFICATIONS ============================= -->
-
-  <section id="certifications">
-
-    <div class="wrap">
-
-      <div class="sec-head reveal">
-        <span class="sec-num">01</span>
-        <span class="sec-title">
-          Certifications &amp; Training
-        </span>
-      </div>
-
-
-      <p class="sec-sub reveal">
-        Professional certifications, security training, and practical learning.
-      </p>
-
-
-      <div class="card cert-list reveal">
-
-
-        <!-- eJPT -->
-
-        <div class="cert-row">
-
-          <div class="cert-main">
-
-            <div class="cert-name">
-              eJPT v2 — Junior Penetration Tester
-            </div>
-
-            <div class="cert-issuer">
-              INE / eLearnSecurity · In Progress
-            </div>
-
-          </div>
-
-          <span class="cert-status inprogress">
-            IN PROGRESS
-          </span>
-
-        </div>
-
-
-
-        <!-- PortSwigger -->
-
-        <div class="cert-row">
-
-          <div class="cert-main">
-
-            <div class="cert-name">
-              Web Security Academy — Practical Web Security Labs
-            </div>
-
-            <div class="cert-issuer">
-              PortSwigger · Ongoing
-            </div>
-
-          </div>
-
-          <span class="cert-status ongoing">
-            ONGOING
-          </span>
-
-        </div>
-
-
-
-        <!-- OSCP -->
-
-        <div class="cert-row">
-
-          <div class="cert-main">
-
-            <div class="cert-name">
-              OSCP+ — OffSec Certified Professional
-            </div>
-
-            <div class="cert-issuer">
-              OffSec · Future Target
-            </div>
-
-          </div>
-
-          <span class="cert-status planned">
-            PLANNED
-          </span>
-
-        </div>
-
-
-
-        <!--
-
-        ============================================
-        ADD EARNED CERTIFICATES HERE
-        ============================================
-
-        Example:
-
-        <div class="cert-row">
-
-          <div class="cert-main">
-
-            <div class="cert-name">
-              Certificate Name
-            </div>
-
-            <div class="cert-issuer">
-              Issuing Organization · Month Year
-            </div>
-
-          </div>
-
-          <div class="cert-actions">
-
-            <span class="cert-status earned">
-              EARNED
-            </span>
-
-            <a
-              class="cert-link"
-              href="cert/certificate-2.png"
+              class="social-icon"
+              href="https://github.com/MohamedSM"
               target="_blank"
               rel="noopener"
+              aria-label="GitHub"
             >
-              VIEW CERTIFICATE →
+              GH
+            </a>
+
+            <a
+              class="social-icon"
+              href="https://www.linkedin.com/in/mohamed-shabban-b28174344/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              IN
+            </a>
+
+            <a
+              class="social-icon"
+              href="mailto:mohamedworkoff@gmail.com"
+              aria-label="Email"
+            >
+              @
             </a>
 
           </div>
 
-        </div>
 
-        -->
-
-      </div>
-
-
-      <p class="cert-note reveal">
-
-        Practical training focused on penetration testing,
-        web application security, networking, Linux/Windows,
-        and offensive security fundamentals.
-
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ============================= SKILLS ============================= -->
-
-  <section id="skills">
-
-    <div class="wrap">
-
-      <div class="sec-head reveal">
-
-        <span class="sec-num">02</span>
-
-        <span class="sec-title">
-          Technical Skills
-        </span>
-
-      </div>
-
-
-      <p class="sec-sub reveal">
-        Technical capabilities, security knowledge, programming,
-        and tools currently in my skill set.
-      </p>
-
-
-      <div class="skills-grid">
-
-
-        <!-- Penetration Testing -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">01</span>
-
-            Penetration Testing
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              Reconnaissance
-            </span>
-
-            <span class="skill-chip">
-              Enumeration
-            </span>
-
-            <span class="skill-chip">
-              Vulnerability Assessment
-            </span>
-
-            <span class="skill-chip">
-              Exploitation
-            </span>
-
-            <span class="skill-chip">
-              Privilege Escalation
-            </span>
-
-            <span class="skill-chip">
-              Post-Exploitation
-            </span>
-
-            <span class="skill-chip">
-              Network Pentesting
-            </span>
-
-            <span class="skill-chip">
-              Web Pentesting
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Web Security -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">02</span>
-
-            Web Application Security
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              OWASP Top 10
-            </span>
-
-            <span class="skill-chip">
-              SQL Injection
-            </span>
-
-            <span class="skill-chip">
-              XSS
-            </span>
-
-            <span class="skill-chip">
-              LFI
-            </span>
-
-            <span class="skill-chip">
-              SSRF
-            </span>
-
-            <span class="skill-chip">
-              XXE
-            </span>
-
-            <span class="skill-chip">
-              Command Injection
-            </span>
-
-            <span class="skill-chip">
-              Authentication Testing
-            </span>
-
-            <span class="skill-chip">
-              Access Control
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Networking -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">03</span>
-
-            Networking &amp; Infrastructure
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              TCP/IP
-            </span>
-
-            <span class="skill-chip">
-              DNS
-            </span>
-
-            <span class="skill-chip">
-              HTTP/HTTPS
-            </span>
-
-            <span class="skill-chip">
-              FTP
-            </span>
-
-            <span class="skill-chip">
-              SMB
-            </span>
-
-            <span class="skill-chip">
-              SSH
-            </span>
-
-            <span class="skill-chip">
-              RDP
-            </span>
-
-            <span class="skill-chip">
-              Network Enumeration
-            </span>
-
-            <span class="skill-chip">
-              Pivoting
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Security Tools -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">04</span>
-
-            Security Tools
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              Nmap
-            </span>
-
-            <span class="skill-chip">
-              Burp Suite
-            </span>
-
-            <span class="skill-chip">
-              Metasploit
-            </span>
-
-            <span class="skill-chip">
-              FFUF
-            </span>
-
-            <span class="skill-chip">
-              Gobuster
-            </span>
-
-            <span class="skill-chip">
-              Hydra
-            </span>
-
-            <span class="skill-chip">
-              NetExec
-            </span>
-
-            <span class="skill-chip">
-              Impacket
-            </span>
-
-            <span class="skill-chip">
-              Proxychains
-            </span>
-
-            <span class="skill-chip">
-              Chisel
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Programming -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">05</span>
-
-            Programming &amp; Development
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              Python
-            </span>
-
-            <span class="skill-chip">
-              C++
-            </span>
-
-            <span class="skill-chip">
-              PHP
-            </span>
-
-            <span class="skill-chip">
-              JavaScript
-            </span>
-
-            <span class="skill-chip">
-              Node.js
-            </span>
-
-            <span class="skill-chip">
-              Express.js
-            </span>
-
-            <span class="skill-chip">
-              HTML
-            </span>
-
-            <span class="skill-chip">
-              CSS
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Operating Systems -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">06</span>
-
-            Operating Systems
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              Linux
-            </span>
-
-            <span class="skill-chip">
-              Kali Linux
-            </span>
-
-            <span class="skill-chip">
-              Windows
-            </span>
-
-            <span class="skill-chip">
-              Windows Server
-            </span>
-
-            <span class="skill-chip">
-              Linux Privilege Escalation
-            </span>
-
-            <span class="skill-chip">
-              Windows Privilege Escalation
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Active Directory -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">07</span>
-
-            Active Directory
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              Active Directory Fundamentals
-            </span>
-
-            <span class="skill-chip">
-              Domain Enumeration
-            </span>
-
-            <span class="skill-chip">
-              SMB Enumeration
-            </span>
-
-            <span class="skill-chip">
-              Windows Authentication
-            </span>
-
-            <span class="skill-chip">
-              Lateral Movement
-            </span>
-
-            <span class="skill-chip">
-              Pivoting
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- Databases -->
-
-        <div class="card skill-card reveal">
-
-          <div class="skill-title">
-
-            <span class="skill-number">08</span>
-
-            Databases
-
-          </div>
-
-          <div class="skill-items">
-
-            <span class="skill-chip">
-              SQL
-            </span>
-
-            <span class="skill-chip">
-              MySQL
-            </span>
-
-            <span class="skill-chip">
-              SQLite
-            </span>
-
-            <span class="skill-chip">
-              Database Enumeration
-            </span>
-
-            <span class="skill-chip">
-              SQL Injection
-            </span>
-
-          </div>
+          <a
+            class="btn btn-primary"
+            href="cv.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3v12"/>
+              <path d="M7 10l5 5 5-5"/>
+              <path d="M5 21h14"/>
+            </svg>
+
+            View CV
+
+          </a>
 
         </div>
 
@@ -907,52 +245,741 @@
 
     </div>
 
-  </section>
 
+    <!-- ABOUT -->
 
+    <div class="card about-card reveal">
 
-  <!-- ============================= WRITEUPS ============================= -->
-
-  <section id="writeups">
-
-    <div class="wrap">
-
-      <div class="sec-head reveal">
-
-        <span class="sec-num">03</span>
-
-        <span class="sec-title">
-          Writeups
-        </span>
-
-      </div>
-
-
-      <p class="sec-sub reveal">
-        CTF challenges, security labs, and penetration testing walkthroughs.
-      </p>
-
-
-      <div class="card writeup-placeholder reveal">
+      <div class="card-title">
 
         <svg viewBox="0 0 24 24">
-
-          <path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/>
-
-          <path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/>
-
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
         </svg>
 
+        About Me
 
-        <div>
+      </div>
 
-          <div class="writeup-title">
-            No writeups published yet
+
+      <div class="about-body" id="aboutBody">
+
+        <p>
+          I'm a highly motivated aspiring penetration tester focused on
+          <strong>web application security, network security, Windows security,
+          and offensive security</strong>.
+        </p>
+
+        <p class="about-more">
+          My practical learning includes hands-on work with
+          <strong>OWASP Top 10</strong> vulnerabilities, reconnaissance,
+          enumeration, exploitation, privilege escalation, credential
+          discovery, lateral movement, and internal network pivoting.
+        </p>
+
+        <p class="about-more">
+          I also have a programming background in
+          <strong>Python, C++, PHP, JavaScript, and Node.js</strong>,
+          which helps me understand applications and security issues from
+          both the development and offensive-security perspectives.
+        </p>
+
+        <p class="about-more">
+          My current focus is building practical penetration-testing
+          experience and progressing toward professional certifications,
+          while documenting security labs and authorized testing scenarios.
+        </p>
+
+      </div>
+
+
+      <button
+        class="show-more-btn"
+        id="showMoreBtn"
+        aria-expanded="false"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+
+        Show more
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CERTIFICATIONS
+========================================================= -->
+
+<section id="certifications">
+
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <span class="sec-title">
+        Certifications &amp; Training
+      </span>
+    </div>
+
+    <p class="sec-sub reveal">
+      Professional training, certifications, and practical security education.
+    </p>
+
+
+    <div class="card cert-list reveal">
+
+
+      <!-- ITI CERTIFICATE -->
+
+      <div class="cert-row">
+
+        <div class="cert-main">
+
+          <div class="cert-name">
+            ITI — Cybersecurity &amp; Technical Training
           </div>
 
-          <div class="writeup-sub">
-            Security lab writeups will be published here.
+          <div class="cert-issuer">
+            Information Technology Institute
           </div>
+
+        </div>
+
+        <div class="cert-actions">
+
+          <span class="cert-status earned">
+            EARNED
+          </span>
+
+          <!--
+            IMPORTANT:
+            Change the filename below to the actual certificate filename
+            inside the cert folder.
+          -->
+
+          <a
+            class="cert-link"
+            href="cert/iti-certificate-1.jpg"
+            target="_blank"
+            rel="noopener"
+          >
+            View Certificate →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SECOND CERTIFICATE -->
+
+      <div class="cert-row">
+
+        <div class="cert-main">
+
+          <div class="cert-name">
+            Security &amp; Networking Training
+          </div>
+
+          <div class="cert-issuer">
+            Technical Training
+          </div>
+
+        </div>
+
+        <div class="cert-actions">
+
+          <span class="cert-status earned">
+            EARNED
+          </span>
+
+          <a
+            class="cert-link"
+            href="cert/iti-certificate-2.jpg"
+            target="_blank"
+            rel="noopener"
+          >
+            View Certificate →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- eJPT -->
+
+      <div class="cert-row">
+
+        <div class="cert-main">
+
+          <div class="cert-name">
+            eJPT v2 — Junior Penetration Tester
+          </div>
+
+          <div class="cert-issuer">
+            INE / eLearnSecurity
+          </div>
+
+        </div>
+
+        <span class="cert-status inprogress">
+          IN PROGRESS
+        </span>
+
+      </div>
+
+
+      <!-- PORTSWIGGER -->
+
+      <div class="cert-row">
+
+        <div class="cert-main">
+
+          <div class="cert-name">
+            Web Security Academy — Practical Labs
+          </div>
+
+          <div class="cert-issuer">
+            PortSwigger
+          </div>
+
+        </div>
+
+        <span class="cert-status ongoing">
+          ONGOING
+        </span>
+
+      </div>
+
+
+      <!-- OSCP -->
+
+      <div class="cert-row">
+
+        <div class="cert-main">
+
+          <div class="cert-name">
+            OSCP+ — OffSec Certified Professional
+          </div>
+
+          <div class="cert-issuer">
+            OffSec
+          </div>
+
+        </div>
+
+        <span class="cert-status planned">
+          PLANNED
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+    <p class="cert-note reveal">
+      Certificates shown above represent completed training where marked
+      <strong>EARNED</strong>. Certifications marked
+      <strong>IN PROGRESS</strong> or <strong>PLANNED</strong>
+      have not yet been awarded.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <span class="sec-title">
+        Technical Skills
+      </span>
+    </div>
+
+    <p class="sec-sub reveal">
+      Security, networking, operating systems, programming, and offensive-security tooling.
+    </p>
+
+
+    <div class="card scan-card reveal">
+
+
+      <!-- WEB SECURITY -->
+
+      <div class="scan-block">
+
+        <div class="scan-block-title">
+          Web Application Security
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">01</span>
+          <span class="port-name">OWASP Top 10</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">02</span>
+          <span class="port-name">SQL Injection</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">03</span>
+          <span class="port-name">Cross-Site Scripting (XSS)</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">04</span>
+          <span class="port-name">LFI / File Inclusion</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">05</span>
+          <span class="port-name">SSRF</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">06</span>
+          <span class="port-name">XXE</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">07</span>
+          <span class="port-name">Command Injection</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">08</span>
+          <span class="port-name">Authentication &amp; Access Control Testing</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+      </div>
+
+
+      <!-- NETWORK -->
+
+      <div class="scan-block">
+
+        <div class="scan-block-title">
+          Network Security
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">01</span>
+          <span class="port-name">Network Fundamentals</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">02</span>
+          <span class="port-name">TCP/IP &amp; Networking</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">03</span>
+          <span class="port-name">Network Reconnaissance</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">04</span>
+          <span class="port-name">Service Enumeration</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">05</span>
+          <span class="port-name">SMB / FTP / RDP</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+      </div>
+
+
+      <!-- WINDOWS -->
+
+      <div class="scan-block">
+
+        <div class="scan-block-title">
+          Windows &amp; Active Directory
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">01</span>
+          <span class="port-name">Windows Security</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">02</span>
+          <span class="port-name">Active Directory Fundamentals</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">03</span>
+          <span class="port-name">Windows Privilege Escalation</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">04</span>
+          <span class="port-name">Credential Discovery</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">05</span>
+          <span class="port-name">Lateral Movement</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">06</span>
+          <span class="port-name">Network Pivoting</span>
+          <span class="port-status open">HANDS-ON</span>
+        </div>
+
+      </div>
+
+
+      <!-- LINUX -->
+
+      <div class="scan-block">
+
+        <div class="scan-block-title">
+          Linux &amp; System Security
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">01</span>
+          <span class="port-name">Linux Fundamentals</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">02</span>
+          <span class="port-name">Linux Privilege Escalation</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">03</span>
+          <span class="port-name">Shell &amp; Command-Line</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+      </div>
+
+
+      <!-- TOOLS -->
+
+      <div class="scan-block">
+
+        <div class="scan-block-title">
+          Security Tools
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">01</span>
+          <span class="port-name">Nmap</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">02</span>
+          <span class="port-name">Burp Suite</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">03</span>
+          <span class="port-name">Metasploit</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">04</span>
+          <span class="port-name">FFUF</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">05</span>
+          <span class="port-name">Gobuster</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">06</span>
+          <span class="port-name">Wireshark</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">07</span>
+          <span class="port-name">Hydra</span>
+          <span class="port-status open">PRACTICE</span>
+        </div>
+
+      </div>
+
+
+      <!-- PROGRAMMING -->
+
+      <div class="scan-block">
+
+        <div class="scan-block-title">
+          Programming &amp; Development
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">01</span>
+          <span class="port-name">Python</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">02</span>
+          <span class="port-name">C++</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">03</span>
+          <span class="port-name">PHP</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">04</span>
+          <span class="port-name">JavaScript</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">05</span>
+          <span class="port-name">Node.js / Express</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+        <div class="port-row">
+          <span class="port-id">06</span>
+          <span class="port-name">SQL / SQLite / MySQL</span>
+          <span class="port-status open">ACTIVE</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS / LABS
+========================================================= -->
+
+<section id="projects">
+
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <span class="sec-title">
+        Security Projects &amp; Labs
+      </span>
+    </div>
+
+    <p class="sec-sub reveal">
+      Practical security work, lab environments, and technical research.
+    </p>
+
+
+    <div class="case-grid">
+
+
+      <!-- PROJECT 1 -->
+
+      <div class="card case reveal">
+
+        <div class="case-head">
+
+          <span class="case-id">
+            LAB-001
+          </span>
+
+          <span class="case-status">
+            COMPLETED
+          </span>
+
+        </div>
+
+        <div class="case-title">
+          Windows Hacking &amp; Internal Pivoting
+        </div>
+
+        <p class="case-desc">
+          Authorized multi-stage Windows penetration testing lab covering
+          reconnaissance, initial access, credential discovery, lateral
+          movement, internal network pivoting, privilege escalation,
+          and remote code execution.
+        </p>
+
+        <div class="case-stack">
+
+          <span class="chip">Windows</span>
+          <span class="chip">Enumeration</span>
+          <span class="chip">Credential Discovery</span>
+          <span class="chip">Lateral Movement</span>
+          <span class="chip">Pivoting</span>
+          <span class="chip">Privilege Escalation</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJECT 2 -->
+
+      <div class="card case reveal">
+
+        <div class="case-head">
+
+          <span class="case-id">
+            LAB-002
+          </span>
+
+          <span class="case-status">
+            PRACTICE
+          </span>
+
+        </div>
+
+        <div class="case-title">
+          Web Application Security Labs
+        </div>
+
+        <p class="case-desc">
+          Hands-on practice with deliberately vulnerable web applications,
+          focusing on vulnerability discovery, exploitation, request
+          manipulation, authentication testing, and security impact analysis.
+        </p>
+
+        <div class="case-stack">
+
+          <span class="chip">SQLi</span>
+          <span class="chip">XSS</span>
+          <span class="chip">LFI</span>
+          <span class="chip">SSRF</span>
+          <span class="chip">XXE</span>
+          <span class="chip">Command Injection</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJECT 3 -->
+
+      <div class="card case reveal">
+
+        <div class="case-head">
+
+          <span class="case-id">
+            LAB-003
+          </span>
+
+          <span class="case-status">
+            PRACTICE
+          </span>
+
+        </div>
+
+        <div class="case-title">
+          Network Security &amp; Enumeration
+        </div>
+
+        <p class="case-desc">
+          Practical network-security exercises involving host discovery,
+          port scanning, service enumeration, protocol analysis, and
+          identification of potential attack paths.
+        </p>
+
+        <div class="case-stack">
+
+          <span class="chip">Nmap</span>
+          <span class="chip">Wireshark</span>
+          <span class="chip">SMB</span>
+          <span class="chip">FTP</span>
+          <span class="chip">RDP</span>
+          <span class="chip">Enumeration</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJECT 4 -->
+
+      <div class="card case reveal">
+
+        <div class="case-head">
+
+          <span class="case-id">
+            LAB-004
+          </span>
+
+          <span class="case-status">
+            PRACTICE
+          </span>
+
+        </div>
+
+        <div class="case-title">
+          Linux &amp; Windows Privilege Escalation
+        </div>
+
+        <p class="case-desc">
+          Hands-on security labs focused on identifying misconfigurations,
+          weak permissions, exposed credentials, and escalation paths on
+          Linux and Windows systems.
+        </p>
+
+        <div class="case-stack">
+
+          <span class="chip">Linux</span>
+          <span class="chip">Windows</span>
+          <span class="chip">Privilege Escalation</span>
+          <span class="chip">Enumeration</span>
 
         </div>
 
@@ -960,258 +987,437 @@
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
+<!-- =========================================================
+     WRITEUPS
+========================================================= -->
 
-  <!-- ============================= METHODOLOGY ============================= -->
+<section id="writeups">
 
-  <section id="methodology">
+  <div class="wrap">
 
-    <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <span class="sec-title">
+        Writeups
+      </span>
+    </div>
 
-      <div class="sec-head reveal">
+    <p class="sec-sub reveal">
+      Technical reports and documented penetration-testing labs.
+    </p>
 
-        <span class="sec-num">04</span>
 
-        <span class="sec-title">
-          Methodology
+    <!-- WINDOWS PIVOTING WRITEUP -->
+
+    <div class="card writeup-row reveal">
+
+      <div class="writeup-row-head">
+
+        <span class="writeup-tag">
+          PENTEST LAB
+        </span>
+
+        <span class="writeup-date">
+          August 2026
         </span>
 
       </div>
 
 
-      <p class="sec-sub reveal">
-        My current penetration testing learning path and technical progression.
+      <div class="writeup-row-title">
+        Windows Hacking — Multi-Node Compromise &amp; Pivoting
+      </div>
+
+
+      <p class="writeup-row-desc">
+
+        An authorized Windows penetration-testing lab documenting a
+        full attack chain from initial access through credential discovery,
+        lateral movement, internal SOCKS5 pivoting, privilege escalation,
+        and final remote code execution.
+
       </p>
 
 
-      <div class="reveal">
+      <div class="writeup-actions">
 
-        <div class="progress-label">
-
-          <span>
-            Penetration Testing Roadmap
-          </span>
-
-          <span>
-            Phase 1 of 5
-          </span>
-
-        </div>
-
-
-        <div class="progress-track">
-
-          <div
-            class="progress-fill"
-            id="progressFill"
-          ></div>
-
-        </div>
-
-      </div>
-
-
-      <div class="card phase-list reveal">
-
-
-        <div class="phase active">
-
-          <div class="phase-marker">
-            01
-          </div>
-
-          <div>
-
-            <div class="phase-name">
-              Scanning &amp; Enumeration
-            </div>
-
-            <div class="phase-desc">
-              Network reconnaissance, service enumeration,
-              web discovery, and attack-surface identification.
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="phase">
-
-          <div class="phase-marker">
-            02
-          </div>
-
-          <div>
-
-            <div class="phase-name">
-              Exploitation
-            </div>
-
-            <div class="phase-desc">
-              Manual vulnerability exploitation across
-              web applications and network services.
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="phase">
-
-          <div class="phase-marker">
-            03
-          </div>
-
-          <div>
-
-            <div class="phase-name">
-              Privilege Escalation
-            </div>
-
-            <div class="phase-desc">
-              Linux and Windows privilege escalation
-              techniques and post-exploitation.
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="phase">
-
-          <div class="phase-marker">
-            04
-          </div>
-
-          <div>
-
-            <div class="phase-name">
-              Active Directory &amp; Pivoting
-            </div>
-
-            <div class="phase-desc">
-              Domain enumeration, lateral movement,
-              internal network access, and pivoting.
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="phase">
-
-          <div class="phase-marker">
-            05
-          </div>
-
-          <div>
-
-            <div class="phase-name">
-              Advanced Penetration Testing
-            </div>
-
-            <div class="phase-desc">
-              Full-chain attack scenarios, reporting,
-              methodology refinement, and advanced preparation.
-            </div>
-
-          </div>
-
-        </div>
+        <a
+          class="writeup-link"
+          href="Windows%20Hacking1.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Read Full PDF →
+        </a>
 
       </div>
 
     </div>
 
-  </section>
 
+    <!-- NETWORK SECURITY MATERIAL -->
 
+    <div class="card writeup-row reveal">
 
-  <!-- ============================= CONTACT ============================= -->
+      <div class="writeup-row-head">
 
-  <section id="contact">
+        <span class="writeup-tag">
+          NETWORK
+        </span>
 
-    <div class="wrap">
-
-      <div class="sec-head reveal">
-
-        <span class="sec-num">05</span>
-
-        <span class="sec-title">
-          Contact
+        <span class="writeup-date">
+          2026
         </span>
 
       </div>
 
 
-      <div class="card contact-panel reveal">
-
-        <div>
-
-          <div class="contact-headline">
-            Open to junior penetration testing roles,
-            security opportunities, and freelance work.
-          </div>
-
-          <div class="contact-sub">
-            Feel free to reach out.
-          </div>
-
-        </div>
+      <div class="writeup-row-title">
+        Network Security &amp; Fundamentals
+      </div>
 
 
-        <div class="contact-links">
-
-          <a
-            href="https://github.com/MohamedSM"
-            target="_blank"
-            rel="noopener"
-          >
-            GitHub
-          </a>
+      <p class="writeup-row-desc">
+        Supporting technical material covering networking fundamentals,
+        network security concepts, and practical security analysis.
+      </p>
 
 
-          <a
-            href="mailto:mohamedworkoff@gmail.com"
-          >
-            Email
-          </a>
+      <div class="writeup-actions">
 
-
-          <a
-            href="https://www.linkedin.com/in/mohamed-shabban-b28174344"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn
-          </a>
-
-        </div>
+        <a
+          class="writeup-link"
+          href="network%20fund.jpg"
+          target="_blank"
+          rel="noopener"
+        >
+          View Material →
+        </a>
 
       </div>
 
     </div>
 
-  </section>
+
+    <!-- WEB SECURITY -->
+
+    <div class="card writeup-row reveal">
+
+      <div class="writeup-row-head">
+
+        <span class="writeup-tag">
+          WEB SECURITY
+        </span>
+
+        <span class="writeup-date">
+          2026
+        </span>
+
+      </div>
+
+
+      <div class="writeup-row-title">
+        Web Penetration Testing — Reconnaissance to Remediation
+      </div>
+
+
+      <p class="writeup-row-desc">
+        Security workflow covering reconnaissance, vulnerability
+        identification, exploitation concepts, impact analysis,
+        and remediation.
+      </p>
+
+
+      <div class="writeup-actions">
+
+        <a
+          class="writeup-link"
+          href="Web%20PenTeRecon%20to%20Remediation.jpg"
+          target="_blank"
+          rel="noopener"
+        >
+          View Material →
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     METHODOLOGY
+========================================================= -->
+
+<section id="methodology">
+
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <span class="sec-title">
+        Methodology
+      </span>
+    </div>
+
+    <p class="sec-sub reveal">
+      My current penetration-testing learning and assessment workflow.
+    </p>
+
+
+    <div class="reveal">
+
+      <div class="progress-label">
+
+        <span>
+          Penetration Testing Skill Development
+        </span>
+
+        <span>
+          Active
+        </span>
+
+      </div>
+
+
+      <div class="progress-track">
+
+        <div
+          class="progress-fill"
+          id="progressFill"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <div class="card phase-list reveal">
+
+
+      <div class="phase active">
+
+        <div class="phase-marker">
+          01
+        </div>
+
+        <div>
+
+          <div class="phase-name">
+            Reconnaissance &amp; Enumeration
+          </div>
+
+          <div class="phase-desc">
+            Host discovery, port scanning, service enumeration,
+            directory discovery, and attack-surface mapping.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="phase active">
+
+        <div class="phase-marker">
+          02
+        </div>
+
+        <div>
+
+          <div class="phase-name">
+            Vulnerability Discovery
+          </div>
+
+          <div class="phase-desc">
+            Manual and tool-assisted identification of web,
+            network, authentication, and configuration vulnerabilities.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="phase active">
+
+        <div class="phase-marker">
+          03
+        </div>
+
+        <div>
+
+          <div class="phase-name">
+            Exploitation
+          </div>
+
+          <div class="phase-desc">
+            Controlled exploitation of identified vulnerabilities
+            to validate their real security impact.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="phase active">
+
+        <div class="phase-marker">
+          04
+        </div>
+
+        <div>
+
+          <div class="phase-name">
+            Privilege Escalation
+          </div>
+
+          <div class="phase-desc">
+            Linux and Windows privilege-escalation techniques
+            following successful initial compromise.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="phase active">
+
+        <div class="phase-marker">
+          05
+        </div>
+
+        <div>
+
+          <div class="phase-name">
+            Lateral Movement &amp; Pivoting
+          </div>
+
+          <div class="phase-desc">
+            Moving between authorized systems and reaching internal
+            network segments through controlled pivoting techniques.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="phase">
+
+        <div class="phase-marker">
+          06
+        </div>
+
+        <div>
+
+          <div class="phase-name">
+            Reporting &amp; Remediation
+          </div>
+
+          <div class="phase-desc">
+            Documenting evidence, impact, attack paths,
+            remediation recommendations, and retesting requirements.
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-num">06</span>
+      <span class="sec-title">
+        Contact
+      </span>
+    </div>
+
+
+    <div class="card contact-panel reveal">
+
+      <div>
+
+        <div class="contact-headline">
+          Open to junior penetration testing opportunities,
+          security projects, and technical collaborations.
+        </div>
+
+        <div class="contact-sub">
+          Feel free to reach out through any of the channels below.
+        </div>
+
+      </div>
+
+
+      <div class="contact-links">
+
+        <a
+          href="https://github.com/MohamedSM"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="mailto:mohamedworkoff@gmail.com"
+        >
+          Email
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/mohamed-shabban-b28174344/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 </main>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
   <div class="wrap">
-    © 2026 Mohamed — TLP:CLEAR // end of report
+    © 2026 Mohamed Shabban — TLP:CLEAR // end of report
   </div>
 
 </footer>

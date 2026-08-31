@@ -1,188 +1,273 @@
-```javascript
-"use strict";
+// =========================================================
+// MOBILE MENU
+// =========================================================
 
-document.addEventListener("DOMContentLoaded", function () {
+const navtoggle =
+    document.getElementById("navtoggle");
 
-  /* ================= MOBILE MENU ================= */
-
-  const navToggle = document.getElementById("navtoggle");
-  const mobileMenu = document.getElementById("mobilemenu");
-
-  if (navToggle && mobileMenu) {
-
-    navToggle.addEventListener("click", function () {
-
-      const opened = !mobileMenu.hasAttribute("hidden");
-
-      if (opened) {
-        mobileMenu.setAttribute("hidden", "");
-        navToggle.setAttribute("aria-expanded", "false");
-      } else {
-        mobileMenu.removeAttribute("hidden");
-        navToggle.setAttribute("aria-expanded", "true");
-      }
-
-    });
-
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-
-      link.addEventListener("click", function () {
-        mobileMenu.setAttribute("hidden", "");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
-
-    });
-  }
+const mobilemenu =
+    document.getElementById("mobilemenu");
 
 
-  /* ================= SHOW MORE ================= */
+if (navtoggle && mobilemenu) {
 
-  const showMoreBtn = document.getElementById("showMoreBtn");
-  const aboutCard = document.querySelector(".about-card");
+    navtoggle.addEventListener("click", () => {
 
-  if (showMoreBtn && aboutCard) {
-
-    showMoreBtn.addEventListener("click", function () {
-
-      const expanded =
-        aboutCard.classList.toggle("expanded");
-
-      showMoreBtn.textContent =
-        expanded
-          ? "↑ Show less"
-          : "↓ Show more";
-
-    });
-  }
+        const opened =
+            navtoggle.getAttribute("aria-expanded") === "true";
 
 
-  /* ================= SCROLL REVEAL ================= */
+        if (opened) {
 
-  const revealElements =
-    document.querySelectorAll(".reveal");
+            mobilemenu.setAttribute(
+                "hidden",
+                ""
+            );
 
-  if ("IntersectionObserver" in window) {
+            navtoggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-    const observer =
-      new IntersectionObserver(
-        function (entries) {
+            navtoggle.textContent = "MENU";
 
-          entries.forEach(function (entry) {
+        } else {
 
-            if (entry.isIntersecting) {
+            mobilemenu.removeAttribute(
+                "hidden"
+            );
 
-              entry.target.classList.add("in-view");
+            navtoggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
 
-              observer.unobserve(entry.target);
-            }
+            navtoggle.textContent = "CLOSE";
 
-          });
-
-        },
-        {
-          threshold: 0.08
         }
-      );
 
-    revealElements.forEach(function (element) {
-      observer.observe(element);
     });
 
-  } else {
 
-    revealElements.forEach(function (element) {
-      element.classList.add("in-view");
-    });
+    mobilemenu
+        .querySelectorAll("a")
+        .forEach(link => {
 
-  }
+            link.addEventListener("click", () => {
 
+                mobilemenu.setAttribute(
+                    "hidden",
+                    ""
+                );
 
-  /* ================= PROGRESS ================= */
+                navtoggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-  const progress =
-    document.getElementById("progressFill");
+                navtoggle.textContent = "MENU";
 
-  if (progress && "IntersectionObserver" in window) {
-
-    const progressObserver =
-      new IntersectionObserver(
-        function (entries) {
-
-          entries.forEach(function (entry) {
-
-            if (entry.isIntersecting) {
-
-              progress.style.width = "82%";
-
-              progressObserver.unobserve(
-                entry.target
-              );
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.2
-        }
-      );
-
-    progressObserver.observe(progress);
-
-  } else if (progress) {
-
-    progress.style.width = "82%";
-
-  }
-
-
-  /* ================= NAV ACTIVE ================= */
-
-  const navLinks =
-    document.querySelectorAll(".navlinks a");
-
-  const sections =
-    document.querySelectorAll("main section");
-
-  if ("IntersectionObserver" in window) {
-
-    const navObserver =
-      new IntersectionObserver(
-        function (entries) {
-
-          entries.forEach(function (entry) {
-
-            if (!entry.isIntersecting) {
-              return;
-            }
-
-            navLinks.forEach(function (link) {
-              link.classList.remove("active");
             });
 
-            const activeLink =
-              document.querySelector(
-                '.navlinks a[href="#' +
-                entry.target.id +
-                '"]'
-              );
+        });
 
-            if (activeLink) {
-              activeLink.classList.add("active");
-            }
+}
 
-          });
+
+// =========================================================
+// SCROLL REVEAL
+// =========================================================
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "in-view"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
 
         },
         {
-          rootMargin: "-35% 0px -55% 0px"
+            threshold:0.12
         }
-      );
+    );
 
-    sections.forEach(function (section) {
-      navObserver.observe(section);
-    });
-  }
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
 
 });
-```
+
+
+// =========================================================
+// PROGRESS BAR
+// =========================================================
+
+const progressFill =
+    document.getElementById(
+        "progressFill"
+    );
+
+
+if (progressFill) {
+
+    const progressObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        progressFill.style.width =
+                            "84%";
+
+                        progressObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold:0.3
+            }
+        );
+
+
+    progressObserver.observe(
+        progressFill
+    );
+
+}
+
+
+// =========================================================
+// NAVIGATION SCROLL SPY
+// =========================================================
+
+const navLinks =
+    document.querySelectorAll(
+        ".navlinks a[data-nav]"
+    );
+
+
+const sections =
+    Array.from(navLinks)
+        .map(link => {
+
+            const id =
+                link.getAttribute("href");
+
+            return document.querySelector(id);
+
+        })
+        .filter(Boolean);
+
+
+const navObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                const activeLink =
+                    document.querySelector(
+                        `.navlinks a[href="#${entry.target.id}"]`
+                    );
+
+
+                if (activeLink) {
+
+                    activeLink.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            rootMargin:
+                "-35% 0px -55% 0px",
+
+            threshold:0
+        }
+    );
+
+
+sections.forEach(section => {
+
+    navObserver.observe(section);
+
+});
+
+
+// =========================================================
+// SMOOTH CLOSE MENU ON RESIZE
+// =========================================================
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        if (
+            window.innerWidth > 900 &&
+            mobilemenu
+        ) {
+
+            mobilemenu.setAttribute(
+                "hidden",
+                ""
+            );
+
+            if (navtoggle) {
+
+                navtoggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                navtoggle.textContent =
+                    "MENU";
+
+            }
+
+        }
+
+    }
+);

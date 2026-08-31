@@ -3,380 +3,1221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mohamed — Penetration Tester Portfolio</title>
-<meta name="description" content="Mohamed — Penetration tester. eJPT v2 candidate, OSCP+ track. Web application security and offensive security engagements.">
+
+<meta
+  name="description"
+  content="Mohamed — Aspiring Penetration Tester focused on web application security, network security, vulnerability assessment, and offensive security."
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+
 <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!--
-  =====================================================================
-  MOHAMED — PENETRATION TESTER PORTFOLIO
-  =====================================================================
-  Static site, no build step. Structure: index.html (this file),
-  styles.css (all styling), script.js (interactivity only).
-
-  QUICK CUSTOMIZATION CHECKLIST
-  1. Profile card (below, id="home")   -> name, title, email, social links, cv.pdf
-  2. Certifications (id="certifications") -> add real certificates as you earn them
-  3. Attack Surface (id="skills")      -> update as your skill set grows
-  4. Engagement Log (id="engagements") -> add new projects as case files
-  5. Writeups (id="writeups")          -> replace placeholder once you publish one
-  6. Contact (id="contact")            -> keep links in sync with the profile card
-
-  Each section below has its own comment marking where it starts and,
-  where relevant, an inline template showing exactly what to copy.
-  =====================================================================
--->
-
 <header>
-  <nav class="wrap">
-    <div class="logo">mohamed<span class="dim">@</span>sec<span class="logo-cursor"></span></div>
 
-    <div class="navlinks" id="navlinks">
-      <a href="#home" data-nav><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>Home</a>
-      <a href="#certifications" data-nav><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/></svg>Certifications</a>
-      <a href="#skills" data-nav><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><line x1="12" y1="15" x2="16" y2="15"/></svg>Skills</a>
-      <a href="#engagements" data-nav><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>Engagements</a>
-      <a href="#writeups" data-nav><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/></svg>Writeups</a>
-      <a href="#methodology" data-nav><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></svg>Methodology</a>
-      <a href="#contact" data-nav><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a>
+  <nav class="wrap">
+
+    <div class="logo">
+      mohamed<span class="dim">@</span>sec<span class="logo-cursor"></span>
     </div>
 
-    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="mobilemenu">menu</button>
+    <div class="navlinks" id="navlinks">
+
+      <a href="#home" data-nav>
+        <svg viewBox="0 0 24 24">
+          <path d="M3 11l9-7 9 7"/>
+          <path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/>
+        </svg>
+        Home
+      </a>
+
+      <a href="#certifications" data-nav>
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="5"/>
+          <path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/>
+        </svg>
+        Certifications
+      </a>
+
+      <a href="#skills" data-nav>
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="M7 9l3 3-3 3"/>
+          <line x1="12" y1="15" x2="16" y2="15"/>
+        </svg>
+        Skills
+      </a>
+
+      <a href="#writeups" data-nav>
+        <svg viewBox="0 0 24 24">
+          <path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/>
+          <path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2 2z"/>
+        </svg>
+        Writeups
+      </a>
+
+      <a href="#methodology" data-nav>
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <polygon points="15,9 13,13 9,15 11,11"/>
+        </svg>
+        Methodology
+      </a>
+
+      <a href="#contact" data-nav>
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        Contact
+      </a>
+
+    </div>
+
+    <button
+      class="navtoggle"
+      id="navtoggle"
+      aria-expanded="false"
+      aria-controls="mobilemenu"
+    >
+      menu
+    </button>
+
   </nav>
+
   <div class="mobilemenu" id="mobilemenu" hidden>
+
     <a href="#home">Home</a>
     <a href="#certifications">Certifications</a>
     <a href="#skills">Skills</a>
-    <a href="#engagements">Engagements</a>
     <a href="#writeups">Writeups</a>
     <a href="#methodology">Methodology</a>
     <a href="#contact">Contact</a>
+
   </div>
+
 </header>
 
+
 <main>
-  <!-- ============================= HOME / PROFILE ============================= -->
+
+  <!-- ============================= HOME ============================= -->
+
   <section id="home" class="section-home">
+
     <div class="wrap">
 
-      <!--
-        Profile card — this is the first thing visitors see.
-        To customize: swap the "M" avatar initial, name, handle, and title
-        line below. The email/location live in .meta-row a few lines down.
-      -->
       <div class="card profile-card reveal">
+
         <div class="avatar-wrap">
+
           <div class="avatar">M</div>
-          <span class="avatar-status" title="Available for engagements"></span>
+
+          <span
+            class="avatar-status"
+            title="Available for opportunities"
+          ></span>
+
         </div>
+
+
         <div class="profile-info">
-          <h1>Mohamed <span class="divider">|</span> <span class="accent">sec</span></h1>
+
+          <h1>
+            Mohamed
+            <span class="divider">|</span>
+            <span class="accent">sec</span>
+          </h1>
+
           <div class="handle">@MohamedSM</div>
-          <div class="title-line">Aspiring Penetration Tester</div>
-          <!-- Update location and email here -->
-          <div class="meta-row">
-            <span class="meta-item"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>Egypt</span>
-            <span class="meta-sep">&middot;</span>
-            <span class="meta-item"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>you@example.com</span>
+
+          <div class="title-line">
+            Aspiring Penetration Tester
           </div>
+
+
+          <div class="meta-row">
+
+            <span class="meta-item">
+
+              <svg viewBox="0 0 24 24">
+                <path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/>
+                <circle cx="12" cy="9" r="2.3"/>
+              </svg>
+
+              Egypt
+
+            </span>
+
+
+            <span class="meta-sep">&middot;</span>
+
+
+            <span class="meta-item">
+
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+
+              Open to opportunities
+
+            </span>
+
+          </div>
+
 
           <div class="profile-actions">
+
             <div class="social-row">
-              <!-- Update these href values with your real profiles -->
-              <a class="social-icon" href="https://github.com/MohamedSM" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-              <a class="social-icon" href="www.linkedin.com/in/mohamed-shabban-b28174344" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
-              <a class="social-icon" href="https://x.com/your-handle" target="_blank" rel="noopener" aria-label="X">X</a>
-              <a class="social-icon" href="https://tryhackme.com/p/your-username" target="_blank" rel="noopener" aria-label="TryHackMe">TH</a>
-              <a class="social-icon" href="https://app.hackthebox.com/profile/your-id" target="_blank" rel="noopener" aria-label="HackTheBox">HB</a>
+
+              <a
+                class="social-icon"
+                href="https://github.com/MohamedSM"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                GH
+              </a>
+
+
+              <a
+                class="social-icon"
+                href="https://www.linkedin.com/in/mohamed-shabban-b28174344"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                IN
+              </a>
+
+
+              <a
+                class="social-icon"
+                href="mailto:mohamedworkoff@gmail.com"
+                aria-label="Email"
+              >
+                @
+              </a>
+
             </div>
-            <!-- Add cv.pdf to this repo and point the link below at it -->
-            <a class="btn btn-primary" href="cv.pdf" download>
-              <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+
+
+            <a
+              class="btn btn-primary"
+              href="cv.pdf"
+              download
+            >
+
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v12"/>
+                <path d="M7 10l5 5 5-5"/>
+                <path d="M5 21h14"/>
+              </svg>
+
               Download CV
+
             </a>
+
           </div>
+
         </div>
+
       </div>
 
-      <!-- About card -->
+
+      <!-- ============================= ABOUT ============================= -->
+
       <div class="card about-card reveal">
-        <div class="card-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>About Me</div>
-        <div class="about-body" id="aboutBody">
-          <p>I'm a highly motivated aspiring penetration tester with a strong technical foundation in <strong>PHP, C++, and Python</strong>. I focus on web application security — finding logic flaws, chaining vulnerabilities, and understanding systems well enough to break them responsibly.</p>
-          <p class="about-more">My practical work is anchored in <strong>PortSwigger Web Security Academy</strong>, where I've built hands-on experience across SQL injection, XSS, LFI, SSRF, XXE, and command injection. I'm currently working through the eJPT v2 certification, with OSCP+ as my next milestone, following a structured five-phase roadmap covering scanning and enumeration through Active Directory pivoting. Alongside application-layer testing, I'm building foundational <strong>AWS and cloud security</strong> knowledge — IAM, S3 exposure, network hardening, and logging — since most of what I test now runs on cloud infrastructure.</p>
-          <p class="about-more">I train against deliberately vulnerable targets — Metasploitable 2 and VulnHub's Vulnerable AD v2 — and I build the tooling to support that study rather than just consuming courses. I'm open to bug bounty programs, freelance work, and junior penetration testing roles.</p>
+
+        <div class="card-title">
+
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
+          </svg>
+
+          About Me
+
         </div>
-        <button class="show-more-btn" id="showMoreBtn" aria-expanded="false">
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+
+
+        <div class="about-body" id="aboutBody">
+
+          <p>
+            I'm a highly motivated aspiring penetration tester with a strong
+            technical foundation in <strong>Python, PHP, C++, JavaScript,
+            and Node.js</strong>. I focus on web application security,
+            network security, vulnerability assessment, and understanding
+            systems well enough to identify and responsibly exploit security
+            weaknesses.
+          </p>
+
+
+          <p class="about-more">
+
+            My practical security training includes hands-on work with
+            <strong>OWASP Top 10</strong> vulnerabilities, PortSwigger Web
+            Security Academy, Linux and Windows environments, network
+            enumeration, exploitation, and privilege escalation.
+
+          </p>
+
+
+          <p class="about-more">
+
+            I regularly work with tools such as
+            <strong>Nmap, Burp Suite, FFUF, Gobuster, Metasploit,
+            Hydra, NetExec, Impacket, Proxychains, and Chisel</strong>.
+            I'm currently progressing through the eJPT v2 path while
+            strengthening my Active Directory, network penetration testing,
+            and cloud security foundations.
+
+          </p>
+
+
+          <p class="about-more">
+
+            I train against deliberately vulnerable environments and focus
+            on building practical skills through labs, CTFs, vulnerability
+            research, and security-focused projects.
+
+          </p>
+
+        </div>
+
+
+        <button
+          class="show-more-btn"
+          id="showMoreBtn"
+          aria-expanded="false"
+        >
+
+          <svg viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+
           Show more
+
         </button>
+
       </div>
 
     </div>
+
   </section>
+
+
 
   <!-- ============================= CERTIFICATIONS ============================= -->
+
   <section id="certifications">
+
     <div class="wrap">
-      <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">Certifications &amp; Training</span></div>
-      <p class="sec-sub reveal">Formal credentials and structured training, current and planned.</p>
+
+      <div class="sec-head reveal">
+        <span class="sec-num">01</span>
+        <span class="sec-title">
+          Certifications &amp; Training
+        </span>
+      </div>
+
+
+      <p class="sec-sub reveal">
+        Professional certifications, security training, and practical learning.
+      </p>
+
 
       <div class="card cert-list reveal">
-        <div class="cert-row">
-          <div class="cert-main">
-            <div class="cert-name">eJPT v2 — eLearnSecurity Junior Penetration Tester</div>
-            <div class="cert-issuer">INE / eLearnSecurity</div>
-          </div>
-          <span class="cert-status inprogress">IN PROGRESS</span>
-        </div>
-        <div class="cert-row">
-          <div class="cert-main">
-            <div class="cert-name">OSCP+ — OffSec Certified Professional</div>
-            <div class="cert-issuer">OffSec</div>
-          </div>
-          <span class="cert-status planned">PLANNED</span>
-        </div>
-        <div class="cert-row">
-          <div class="cert-main">
-            <div class="cert-name">Web Security Academy — practical labs across SQLi, XSS, LFI, SSRF, XXE, Command Injection</div>
-            <div class="cert-issuer">PortSwigger</div>
-          </div>
-          <span class="cert-status ongoing">ONGOING</span>
-        </div>
-        <div class="cert-row">
-          <div class="cert-main">
-            <div class="cert-name">AWS Cloud Security — IAM, S3, VPC, and logging fundamentals</div>
-            <div class="cert-issuer">AWS / self-study</div>
-          </div>
-          <span class="cert-status planned">PLANNED</span>
-        </div>
 
-        <!--
-          ADD YOUR CERTIFICATES HERE.
-          Copy one block below, fill it in, and place it above this comment.
-          Status options already styled: inprogress / ongoing / planned / earned
 
-          <div class="cert-row">
-            <div class="cert-main">
-              <div class="cert-name">Certificate name — full title</div>
-              <div class="cert-issuer">Issuing organization · Month Year</div>
+        <!-- eJPT -->
+
+        <div class="cert-row">
+
+          <div class="cert-main">
+
+            <div class="cert-name">
+              eJPT v2 — Junior Penetration Tester
             </div>
-            <span class="cert-status earned">EARNED</span>
+
+            <div class="cert-issuer">
+              INE / eLearnSecurity · In Progress
+            </div>
+
           </div>
-        -->
-      </div>
-      <p class="cert-note reveal">Roadmap developed in collaboration with cybersecurity trainer <strong>Saif Makharzah</strong>.</p>
-    </div>
-  </section>
 
-  <!-- ============================= SKILLS / ATTACK SURFACE ============================= -->
-  <section id="skills">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Attack Surface</span></div>
-      <p class="sec-sub reveal">nmap -sV skills.local — what's live now, and what's still being enumerated.</p>
+          <span class="cert-status inprogress">
+            IN PROGRESS
+          </span>
 
-      <div class="card scan-card reveal">
-        <div class="scan-block">
-          <div class="scan-block-title">Web vulnerabilities — hands-on (PortSwigger Labs)</div>
-          <div class="port-row"><span class="port-id">80/tcp</span><span class="port-name">SQL Injection</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">81/tcp</span><span class="port-name">Cross-Site Scripting (XSS)</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">82/tcp</span><span class="port-name">Local File Inclusion (LFI)</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">83/tcp</span><span class="port-name">Server-Side Request Forgery (SSRF)</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">84/tcp</span><span class="port-name">XML External Entity (XXE)</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">85/tcp</span><span class="port-name">Command Injection</span><span class="port-status open">OPEN</span></div>
         </div>
 
-        <div class="scan-block">
-          <div class="scan-block-title">Languages &amp; tooling</div>
-          <div class="port-row"><span class="port-id">443/tcp</span><span class="port-name">Python</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">444/tcp</span><span class="port-name">PHP</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">445/tcp</span><span class="port-name">C++</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">446/tcp</span><span class="port-name">Node.js / Express</span><span class="port-status open">OPEN</span></div>
-        </div>
 
-        <div class="scan-block">
-          <div class="scan-block-title">Practice ranges</div>
-          <div class="port-row"><span class="port-id">22/tcp</span><span class="port-name">Metasploitable 2 — core exploitation</span><span class="port-status open">OPEN</span></div>
-          <div class="port-row"><span class="port-id">88/tcp</span><span class="port-name">Vulnerable AD v2 (VulnHub) — Active Directory</span><span class="port-status open">OPEN</span></div>
-        </div>
 
-        <div class="scan-block">
-          <div class="scan-block-title">Cloud &amp; AWS security</div>
-          <!-- Update these as your AWS/cloud security work matures -->
-          <div class="port-row"><span class="port-id">3306/tcp</span><span class="port-name">IAM policy review &amp; least-privilege audits</span><span class="port-status filtered">FILTERED</span></div>
-          <div class="port-row"><span class="port-id">3307/tcp</span><span class="port-name">S3 bucket misconfiguration &amp; exposure checks</span><span class="port-status filtered">FILTERED</span></div>
-          <div class="port-row"><span class="port-id">3308/tcp</span><span class="port-name">Security Groups / VPC network hardening</span><span class="port-status filtered">FILTERED</span></div>
-          <div class="port-row"><span class="port-id">3309/tcp</span><span class="port-name">CloudTrail &amp; GuardDuty logging review</span><span class="port-status filtered">FILTERED</span></div>
-        </div>
+        <!-- PortSwigger -->
 
-        <div class="scan-block">
-          <div class="scan-block-title">In progress</div>
-          <div class="port-row"><span class="port-id">8000/tcp</span><span class="port-name">Active Directory &amp; pivoting</span><span class="port-status filtered">FILTERED</span></div>
-          <div class="port-row"><span class="port-id">8001/tcp</span><span class="port-name">OSCP+ methodology</span><span class="port-status filtered">FILTERED</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="cert-row">
 
-  <section id="engagements">
-    <div class="wrap">
-      <!-- ============================= ENGAGEMENT LOG / PROJECTS ============================= -->
-      <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Engagement Log</span></div>
-      <p class="sec-sub reveal">Case files from security work I've shipped.</p>
-      <div class="case-grid">
-        <div class="card case reveal">
-          <div class="case-head">
-            <span class="case-id">ENG-001</span>
-            <span class="case-status">SHIPPED</span>
+          <div class="cert-main">
+
+            <div class="cert-name">
+              Web Security Academy — Practical Web Security Labs
+            </div>
+
+            <div class="cert-issuer">
+              PortSwigger · Ongoing
+            </div>
+
           </div>
-          <div class="case-title">90-Day Pentest Roadmap</div>
-          <p class="case-desc">A self-built study platform mapping the road to eJPT v2 and OSCP+ across five phases — recon, exploitation, privilege escalation, AD/pivoting, and exam prep — developed with cybersecurity trainer Saif Makharzah. Progress-tracked and built around free-only resources.</p>
-          <div class="case-stack"><span class="chip">HTML/CSS/JS</span><span class="chip">Progress tracking</span><span class="chip">Offline-first</span></div>
+
+          <span class="cert-status ongoing">
+            ONGOING
+          </span>
+
         </div>
 
-        <div class="card case reveal">
-          <div class="case-head">
-            <span class="case-id">ENG-002</span>
-            <span class="case-status">SHIPPED</span>
+
+
+        <!-- OSCP -->
+
+        <div class="cert-row">
+
+          <div class="cert-main">
+
+            <div class="cert-name">
+              OSCP+ — OffSec Certified Professional
+            </div>
+
+            <div class="cert-issuer">
+              OffSec · Future Target
+            </div>
+
           </div>
-          <div class="case-title">Mobile Pentest Roadmap</div>
-          <p class="case-desc">A companion web app covering Android and iOS security across 16 structured stages, built as a standalone learning reference for mobile attack surfaces.</p>
-          <div class="case-stack"><span class="chip">Web App</span><span class="chip">Android/iOS</span><span class="chip">16 stages</span></div>
+
+          <span class="cert-status planned">
+            PLANNED
+          </span>
+
         </div>
 
-        <div class="card case reveal">
-          <div class="case-head">
-            <span class="case-id">ENG-003</span>
-            <span class="case-status">SHIPPED</span>
-          </div>
-          <div class="case-title">University Assignment Submission System</div>
-          <p class="case-desc">A full-stack Node.js/Express + SQLite platform built with security as a first-class concern: bcrypt password hashing, Helmet security headers, CSRF protection, rate limiting, Multer file-upload handling, and proper session management.</p>
-          <div class="case-stack"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">SQLite</span><span class="chip">bcrypt</span><span class="chip">CSRF protection</span><span class="chip">Rate limiting</span></div>
-        </div>
+
 
         <!--
-          ADD MORE CASE FILES HERE.
-          Copy one .card.case block above, update the ID, title, description, and stack chips.
+
+        ============================================
+        ADD EARNED CERTIFICATES HERE
+        ============================================
+
+        Example:
+
+        <div class="cert-row">
+
+          <div class="cert-main">
+
+            <div class="cert-name">
+              Certificate Name
+            </div>
+
+            <div class="cert-issuer">
+              Issuing Organization · Month Year
+            </div>
+
+          </div>
+
+          <div class="cert-actions">
+
+            <span class="cert-status earned">
+              EARNED
+            </span>
+
+            <a
+              class="cert-link"
+              href="cert/certificate-2.png"
+              target="_blank"
+              rel="noopener"
+            >
+              VIEW CERTIFICATE →
+            </a>
+
+          </div>
+
+        </div>
+
         -->
+
       </div>
+
+
+      <p class="cert-note reveal">
+
+        Practical training focused on penetration testing,
+        web application security, networking, Linux/Windows,
+        and offensive security fundamentals.
+
+      </p>
+
     </div>
+
   </section>
+
+
+
+  <!-- ============================= SKILLS ============================= -->
+
+  <section id="skills">
+
+    <div class="wrap">
+
+      <div class="sec-head reveal">
+
+        <span class="sec-num">02</span>
+
+        <span class="sec-title">
+          Technical Skills
+        </span>
+
+      </div>
+
+
+      <p class="sec-sub reveal">
+        Technical capabilities, security knowledge, programming,
+        and tools currently in my skill set.
+      </p>
+
+
+      <div class="skills-grid">
+
+
+        <!-- Penetration Testing -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">01</span>
+
+            Penetration Testing
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              Reconnaissance
+            </span>
+
+            <span class="skill-chip">
+              Enumeration
+            </span>
+
+            <span class="skill-chip">
+              Vulnerability Assessment
+            </span>
+
+            <span class="skill-chip">
+              Exploitation
+            </span>
+
+            <span class="skill-chip">
+              Privilege Escalation
+            </span>
+
+            <span class="skill-chip">
+              Post-Exploitation
+            </span>
+
+            <span class="skill-chip">
+              Network Pentesting
+            </span>
+
+            <span class="skill-chip">
+              Web Pentesting
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Web Security -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">02</span>
+
+            Web Application Security
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              OWASP Top 10
+            </span>
+
+            <span class="skill-chip">
+              SQL Injection
+            </span>
+
+            <span class="skill-chip">
+              XSS
+            </span>
+
+            <span class="skill-chip">
+              LFI
+            </span>
+
+            <span class="skill-chip">
+              SSRF
+            </span>
+
+            <span class="skill-chip">
+              XXE
+            </span>
+
+            <span class="skill-chip">
+              Command Injection
+            </span>
+
+            <span class="skill-chip">
+              Authentication Testing
+            </span>
+
+            <span class="skill-chip">
+              Access Control
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Networking -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">03</span>
+
+            Networking &amp; Infrastructure
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              TCP/IP
+            </span>
+
+            <span class="skill-chip">
+              DNS
+            </span>
+
+            <span class="skill-chip">
+              HTTP/HTTPS
+            </span>
+
+            <span class="skill-chip">
+              FTP
+            </span>
+
+            <span class="skill-chip">
+              SMB
+            </span>
+
+            <span class="skill-chip">
+              SSH
+            </span>
+
+            <span class="skill-chip">
+              RDP
+            </span>
+
+            <span class="skill-chip">
+              Network Enumeration
+            </span>
+
+            <span class="skill-chip">
+              Pivoting
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Security Tools -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">04</span>
+
+            Security Tools
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              Nmap
+            </span>
+
+            <span class="skill-chip">
+              Burp Suite
+            </span>
+
+            <span class="skill-chip">
+              Metasploit
+            </span>
+
+            <span class="skill-chip">
+              FFUF
+            </span>
+
+            <span class="skill-chip">
+              Gobuster
+            </span>
+
+            <span class="skill-chip">
+              Hydra
+            </span>
+
+            <span class="skill-chip">
+              NetExec
+            </span>
+
+            <span class="skill-chip">
+              Impacket
+            </span>
+
+            <span class="skill-chip">
+              Proxychains
+            </span>
+
+            <span class="skill-chip">
+              Chisel
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Programming -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">05</span>
+
+            Programming &amp; Development
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              Python
+            </span>
+
+            <span class="skill-chip">
+              C++
+            </span>
+
+            <span class="skill-chip">
+              PHP
+            </span>
+
+            <span class="skill-chip">
+              JavaScript
+            </span>
+
+            <span class="skill-chip">
+              Node.js
+            </span>
+
+            <span class="skill-chip">
+              Express.js
+            </span>
+
+            <span class="skill-chip">
+              HTML
+            </span>
+
+            <span class="skill-chip">
+              CSS
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Operating Systems -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">06</span>
+
+            Operating Systems
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              Linux
+            </span>
+
+            <span class="skill-chip">
+              Kali Linux
+            </span>
+
+            <span class="skill-chip">
+              Windows
+            </span>
+
+            <span class="skill-chip">
+              Windows Server
+            </span>
+
+            <span class="skill-chip">
+              Linux Privilege Escalation
+            </span>
+
+            <span class="skill-chip">
+              Windows Privilege Escalation
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Active Directory -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">07</span>
+
+            Active Directory
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              Active Directory Fundamentals
+            </span>
+
+            <span class="skill-chip">
+              Domain Enumeration
+            </span>
+
+            <span class="skill-chip">
+              SMB Enumeration
+            </span>
+
+            <span class="skill-chip">
+              Windows Authentication
+            </span>
+
+            <span class="skill-chip">
+              Lateral Movement
+            </span>
+
+            <span class="skill-chip">
+              Pivoting
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Databases -->
+
+        <div class="card skill-card reveal">
+
+          <div class="skill-title">
+
+            <span class="skill-number">08</span>
+
+            Databases
+
+          </div>
+
+          <div class="skill-items">
+
+            <span class="skill-chip">
+              SQL
+            </span>
+
+            <span class="skill-chip">
+              MySQL
+            </span>
+
+            <span class="skill-chip">
+              SQLite
+            </span>
+
+            <span class="skill-chip">
+              Database Enumeration
+            </span>
+
+            <span class="skill-chip">
+              SQL Injection
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
 
   <!-- ============================= WRITEUPS ============================= -->
+
   <section id="writeups">
+
     <div class="wrap">
-      <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Writeups</span></div>
-      <p class="sec-sub reveal">CTF challenges and lab walkthroughs — published as they're written.</p>
+
+      <div class="sec-head reveal">
+
+        <span class="sec-num">03</span>
+
+        <span class="sec-title">
+          Writeups
+        </span>
+
+      </div>
+
+
+      <p class="sec-sub reveal">
+        CTF challenges, security labs, and penetration testing walkthroughs.
+      </p>
+
 
       <div class="card writeup-placeholder reveal">
-        <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/></svg>
-        <div>
-          <div class="writeup-title">No writeups published yet</div>
-          <div class="writeup-sub">First lab writeup lands after the current PortSwigger module wraps.</div>
-        </div>
-      </div>
-      <!--
-        WHEN YOU PUBLISH A WRITEUP, replace the placeholder .writeup-placeholder card
-        above with entries like this (copy, fill in, repeat):
 
-        <div class="card writeup-row reveal">
-          <div class="writeup-row-head">
-            <span class="writeup-tag">CTF</span>
-            <span class="writeup-date">Month Year</span>
+        <svg viewBox="0 0 24 24">
+
+          <path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2z"/>
+
+          <path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2z"/>
+
+        </svg>
+
+
+        <div>
+
+          <div class="writeup-title">
+            No writeups published yet
           </div>
-          <div class="writeup-row-title">Challenge or box name</div>
-          <p class="writeup-row-desc">One or two lines on the vulnerability class and approach.</p>
-          <a class="writeup-link" href="#">Read writeup &rarr;</a>
+
+          <div class="writeup-sub">
+            Security lab writeups will be published here.
+          </div>
+
         </div>
-      -->
+
+      </div>
+
     </div>
+
   </section>
 
-  <!-- ============================= METHODOLOGY / CERT ROADMAP ============================= -->
+
+
+  <!-- ============================= METHODOLOGY ============================= -->
+
   <section id="methodology">
+
     <div class="wrap">
-      <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Methodology</span></div>
-      <p class="sec-sub reveal">The certification path — eJPT v2 now, OSCP+ next.</p>
+
+      <div class="sec-head reveal">
+
+        <span class="sec-num">04</span>
+
+        <span class="sec-title">
+          Methodology
+        </span>
+
+      </div>
+
+
+      <p class="sec-sub reveal">
+        My current penetration testing learning path and technical progression.
+      </p>
+
 
       <div class="reveal">
-        <div class="progress-label"><span>eJPT v2 → OSCP+ track</span><span>Phase 1 of 5</span></div>
-        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+        <div class="progress-label">
+
+          <span>
+            Penetration Testing Roadmap
+          </span>
+
+          <span>
+            Phase 1 of 5
+          </span>
+
+        </div>
+
+
+        <div class="progress-track">
+
+          <div
+            class="progress-fill"
+            id="progressFill"
+          ></div>
+
+        </div>
+
       </div>
+
 
       <div class="card phase-list reveal">
+
+
         <div class="phase active">
-          <div class="phase-marker">01</div>
-          <div>
-            <div class="phase-name">Scanning &amp; Enumeration</div>
-            <div class="phase-desc">Reconnaissance fundamentals on Metasploitable 2 and PortSwigger labs.</div>
+
+          <div class="phase-marker">
+            01
           </div>
+
+          <div>
+
+            <div class="phase-name">
+              Scanning &amp; Enumeration
+            </div>
+
+            <div class="phase-desc">
+              Network reconnaissance, service enumeration,
+              web discovery, and attack-surface identification.
+            </div>
+
+          </div>
+
         </div>
+
+
+
         <div class="phase">
-          <div class="phase-marker">02</div>
-          <div>
-            <div class="phase-name">Exploitation</div>
-            <div class="phase-desc">Manual exploitation techniques tied directly to eJPT v2 course material.</div>
+
+          <div class="phase-marker">
+            02
           </div>
+
+          <div>
+
+            <div class="phase-name">
+              Exploitation
+            </div>
+
+            <div class="phase-desc">
+              Manual vulnerability exploitation across
+              web applications and network services.
+            </div>
+
+          </div>
+
         </div>
+
+
+
         <div class="phase">
-          <div class="phase-marker">03</div>
-          <div>
-            <div class="phase-name">Privilege Escalation</div>
-            <div class="phase-desc">Linux and Windows privilege escalation paths, chained into full compromise scenarios.</div>
+
+          <div class="phase-marker">
+            03
           </div>
+
+          <div>
+
+            <div class="phase-name">
+              Privilege Escalation
+            </div>
+
+            <div class="phase-desc">
+              Linux and Windows privilege escalation
+              techniques and post-exploitation.
+            </div>
+
+          </div>
+
         </div>
+
+
+
         <div class="phase">
-          <div class="phase-marker">04</div>
-          <div>
-            <div class="phase-name">Active Directory &amp; Pivoting</div>
-            <div class="phase-desc">VulnHub Vulnerable AD v2 for domain attacks, lateral movement, and pivoting.</div>
+
+          <div class="phase-marker">
+            04
           </div>
+
+          <div>
+
+            <div class="phase-name">
+              Active Directory &amp; Pivoting
+            </div>
+
+            <div class="phase-desc">
+              Domain enumeration, lateral movement,
+              internal network access, and pivoting.
+            </div>
+
+          </div>
+
         </div>
+
+
+
         <div class="phase">
-          <div class="phase-marker">05</div>
-          <div>
-            <div class="phase-name">OSCP+ Preparation</div>
-            <div class="phase-desc">Guided by MrLimbo's OSCP+ 2026 playlist, building toward exam-day readiness.</div>
+
+          <div class="phase-marker">
+            05
           </div>
+
+          <div>
+
+            <div class="phase-name">
+              Advanced Penetration Testing
+            </div>
+
+            <div class="phase-desc">
+              Full-chain attack scenarios, reporting,
+              methodology refinement, and advanced preparation.
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
+
+
 
   <!-- ============================= CONTACT ============================= -->
+
   <section id="contact">
+
     <div class="wrap">
-      <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Contact</span></div>
-      <div class="card contact-panel reveal">
-        <div>
-          <div class="contact-headline">Open to bug bounty programs, freelance work, and junior penetration testing roles.</div>
-          <div class="contact-sub">Reach out — I respond to every message.</div>
-        </div>
-        <!--
-          Update the links below with your real profiles.
-          Remove any row (TryHackMe / HackTheBox) you don't use.
-        -->
-        <div class="contact-links">
-          <a href="https://github.com/MohamedSM" target="_blank" rel="noopener">GitHub</a>
-          <a href="mohamedworkoff@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://tryhackme.com/p/your-username" target="_blank" rel="noopener">TryHackMe</a>
-          <a href="https://app.hackthebox.com/profile/your-id" target="_blank" rel="noopener">HackTheBox</a>
-        </div>
+
+      <div class="sec-head reveal">
+
+        <span class="sec-num">05</span>
+
+        <span class="sec-title">
+          Contact
+        </span>
+
       </div>
+
+
+      <div class="card contact-panel reveal">
+
+        <div>
+
+          <div class="contact-headline">
+            Open to junior penetration testing roles,
+            security opportunities, and freelance work.
+          </div>
+
+          <div class="contact-sub">
+            Feel free to reach out.
+          </div>
+
+        </div>
+
+
+        <div class="contact-links">
+
+          <a
+            href="https://github.com/MohamedSM"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+
+
+          <a
+            href="mailto:mohamedworkoff@gmail.com"
+          >
+            Email
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/mohamed-shabban-b28174344"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
+
   </section>
+
 </main>
 
+
+
 <footer>
-  <div class="wrap">© 2026 Mohamed — TLP:CLEAR // end of report</div>
+
+  <div class="wrap">
+    © 2026 Mohamed — TLP:CLEAR // end of report
+  </div>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>

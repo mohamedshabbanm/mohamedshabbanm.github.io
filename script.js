@@ -89,13 +89,15 @@ if (showMoreBtn && aboutCard) {
       String(expanded)
     );
 
-    const textNode =
+    const textNodes =
       Array.from(showMoreBtn.childNodes)
-        .find(node => node.nodeType === Node.TEXT_NODE);
+        .filter(
+          node => node.nodeType === Node.TEXT_NODE
+        );
 
-    if (textNode) {
+    if (textNodes.length) {
 
-      textNode.textContent =
+      textNodes[0].textContent =
         expanded
           ? ' Show less'
           : ' Show more';

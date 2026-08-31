@@ -1,272 +1,188 @@
-// =========================================================
-// MOHAMED — PENETRATION TESTER PORTFOLIO
-// INTERACTIVITY
-// =========================================================
+```javascript
+"use strict";
 
+document.addEventListener("DOMContentLoaded", function () {
 
-// =========================================================
-// MOBILE MENU
-// =========================================================
+  /* ================= MOBILE MENU ================= */
 
-const navtoggle = document.getElementById('navtoggle');
-const mobilemenu = document.getElementById('mobilemenu');
+  const navToggle = document.getElementById("navtoggle");
+  const mobileMenu = document.getElementById("mobilemenu");
 
-if (navtoggle && mobilemenu) {
+  if (navToggle && mobileMenu) {
 
-  navtoggle.addEventListener('click', () => {
+    navToggle.addEventListener("click", function () {
 
-    const isHidden = mobilemenu.hasAttribute('hidden');
+      const opened = !mobileMenu.hasAttribute("hidden");
 
-    if (isHidden) {
-
-      mobilemenu.removeAttribute('hidden');
-
-      navtoggle.setAttribute(
-        'aria-expanded',
-        'true'
-      );
-
-    } else {
-
-      mobilemenu.setAttribute(
-        'hidden',
-        ''
-      );
-
-      navtoggle.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-    }
-
-  });
-
-
-  mobilemenu
-    .querySelectorAll('a')
-    .forEach(a => {
-
-      a.addEventListener('click', () => {
-
-        mobilemenu.setAttribute(
-          'hidden',
-          ''
-        );
-
-        navtoggle.setAttribute(
-          'aria-expanded',
-          'false'
-        );
-
-      });
+      if (opened) {
+        mobileMenu.setAttribute("hidden", "");
+        navToggle.setAttribute("aria-expanded", "false");
+      } else {
+        mobileMenu.removeAttribute("hidden");
+        navToggle.setAttribute("aria-expanded", "true");
+      }
 
     });
 
-}
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
 
-
-// =========================================================
-// ABOUT — SHOW MORE / SHOW LESS
-// =========================================================
-
-const showMoreBtn =
-  document.getElementById('showMoreBtn');
-
-const aboutCard =
-  document.querySelector('.about-card');
-
-
-if (showMoreBtn && aboutCard) {
-
-  showMoreBtn.addEventListener('click', () => {
-
-    const expanded =
-      aboutCard.classList.toggle('expanded');
-
-    showMoreBtn.setAttribute(
-      'aria-expanded',
-      String(expanded)
-    );
-
-    const textNodes =
-      Array.from(showMoreBtn.childNodes)
-        .filter(
-          node => node.nodeType === Node.TEXT_NODE
-        );
-
-    if (textNodes.length) {
-
-      textNodes[0].textContent =
-        expanded
-          ? ' Show less'
-          : ' Show more';
-
-    }
-
-  });
-
-}
-
-
-// =========================================================
-// SCROLL REVEAL
-// =========================================================
-
-const revealEls =
-  document.querySelectorAll('.reveal');
-
-
-const io =
-  new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add(
-            'in-view'
-          );
-
-          io.unobserve(
-            entry.target
-          );
-
-        }
-
+      link.addEventListener("click", function () {
+        mobileMenu.setAttribute("hidden", "");
+        navToggle.setAttribute("aria-expanded", "false");
       });
 
-    },
-    {
-      threshold:0.15
-    }
-  );
+    });
+  }
 
 
-revealEls.forEach(el => {
+  /* ================= SHOW MORE ================= */
 
-  io.observe(el);
+  const showMoreBtn = document.getElementById("showMoreBtn");
+  const aboutCard = document.querySelector(".about-card");
+
+  if (showMoreBtn && aboutCard) {
+
+    showMoreBtn.addEventListener("click", function () {
+
+      const expanded =
+        aboutCard.classList.toggle("expanded");
+
+      showMoreBtn.textContent =
+        expanded
+          ? "↑ Show less"
+          : "↓ Show more";
+
+    });
+  }
+
+
+  /* ================= SCROLL REVEAL ================= */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+
+    const observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("in-view");
+
+              observer.unobserve(entry.target);
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.08
+        }
+      );
+
+    revealElements.forEach(function (element) {
+      observer.observe(element);
+    });
+
+  } else {
+
+    revealElements.forEach(function (element) {
+      element.classList.add("in-view");
+    });
+
+  }
+
+
+  /* ================= PROGRESS ================= */
+
+  const progress =
+    document.getElementById("progressFill");
+
+  if (progress && "IntersectionObserver" in window) {
+
+    const progressObserver =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+              progress.style.width = "82%";
+
+              progressObserver.unobserve(
+                entry.target
+              );
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.2
+        }
+      );
+
+    progressObserver.observe(progress);
+
+  } else if (progress) {
+
+    progress.style.width = "82%";
+
+  }
+
+
+  /* ================= NAV ACTIVE ================= */
+
+  const navLinks =
+    document.querySelectorAll(".navlinks a");
+
+  const sections =
+    document.querySelectorAll("main section");
+
+  if ("IntersectionObserver" in window) {
+
+    const navObserver =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(function (entry) {
+
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            navLinks.forEach(function (link) {
+              link.classList.remove("active");
+            });
+
+            const activeLink =
+              document.querySelector(
+                '.navlinks a[href="#' +
+                entry.target.id +
+                '"]'
+              );
+
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+
+          });
+
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px"
+        }
+      );
+
+    sections.forEach(function (section) {
+      navObserver.observe(section);
+    });
+  }
 
 });
-
-
-// =========================================================
-// PROGRESS BAR
-// =========================================================
-
-const progressFill =
-  document.getElementById(
-    'progressFill'
-  );
-
-
-if (progressFill) {
-
-  const progressIO =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            progressFill.style.width =
-              '82%';
-
-            progressIO.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold:0.3
-      }
-    );
-
-
-  progressIO.observe(
-    progressFill
-  );
-
-}
-
-
-// =========================================================
-// NAVIGATION SCROLL SPY
-// =========================================================
-
-const navLinks =
-  document.querySelectorAll(
-    '.navlinks a[data-nav]'
-  );
-
-
-const sections =
-  Array.from(navLinks)
-    .map(link =>
-      document.querySelector(
-        link.getAttribute('href')
-      )
-    )
-    .filter(Boolean);
-
-
-if (sections.length) {
-
-  const spyIO =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach(entry => {
-
-          const link =
-            document.querySelector(
-              `.navlinks a[href="#${entry.target.id}"]`
-            );
-
-          if (!link) {
-            return;
-          }
-
-
-          if (entry.isIntersecting) {
-
-            navLinks.forEach(
-              l =>
-                l.classList.remove(
-                  'active'
-                )
-            );
-
-            link.classList.add(
-              'active'
-            );
-
-          }
-
-        });
-
-      },
-      {
-        rootMargin:
-          '-40% 0px -50% 0px',
-
-        threshold:0
-      }
-    );
-
-
-  sections.forEach(section => {
-
-    spyIO.observe(
-      section
-    );
-
-  });
-
-}
+```

@@ -2,12 +2,8 @@
 // MOBILE MENU
 // =========================================================
 
-const navtoggle =
-    document.getElementById("navtoggle");
-
-const mobilemenu =
-    document.getElementById("mobilemenu");
-
+const navtoggle = document.getElementById("navtoggle");
+const mobilemenu = document.getElementById("mobilemenu");
 
 if (navtoggle && mobilemenu) {
 
@@ -16,32 +12,16 @@ if (navtoggle && mobilemenu) {
         const opened =
             navtoggle.getAttribute("aria-expanded") === "true";
 
-
         if (opened) {
 
-            mobilemenu.setAttribute(
-                "hidden",
-                ""
-            );
-
-            navtoggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
+            mobilemenu.setAttribute("hidden", "");
+            navtoggle.setAttribute("aria-expanded", "false");
             navtoggle.textContent = "MENU";
 
         } else {
 
-            mobilemenu.removeAttribute(
-                "hidden"
-            );
-
-            navtoggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
-
+            mobilemenu.removeAttribute("hidden");
+            navtoggle.setAttribute("aria-expanded", "true");
             navtoggle.textContent = "CLOSE";
 
         }
@@ -55,10 +35,7 @@ if (navtoggle && mobilemenu) {
 
             link.addEventListener("click", () => {
 
-                mobilemenu.setAttribute(
-                    "hidden",
-                    ""
-                );
+                mobilemenu.setAttribute("hidden", "");
 
                 navtoggle.setAttribute(
                     "aria-expanded",
@@ -82,38 +59,50 @@ const revealElements =
     document.querySelectorAll(".reveal");
 
 
-const revealObserver =
-    new IntersectionObserver(
-        (entries) => {
+if ("IntersectionObserver" in window) {
 
-            entries.forEach(entry => {
+    const revealObserver =
+        new IntersectionObserver(
+            (entries) => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(entry => {
 
-                    entry.target.classList.add(
-                        "in-view"
-                    );
+                    if (entry.isIntersecting) {
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+                        entry.target.classList.add(
+                            "in-view"
+                        );
 
-                }
+                        revealObserver.unobserve(
+                            entry.target
+                        );
 
-            });
+                    }
 
-        },
-        {
-            threshold:0.12
-        }
-    );
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
 
 
-revealElements.forEach(element => {
+    revealElements.forEach(element => {
 
-    revealObserver.observe(element);
+        revealObserver.observe(element);
 
-});
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+
+        element.classList.add("in-view");
+
+    });
+
+}
 
 
 // =========================================================
@@ -121,12 +110,10 @@ revealElements.forEach(element => {
 // =========================================================
 
 const progressFill =
-    document.getElementById(
-        "progressFill"
-    );
+    document.getElementById("progressFill");
 
 
-if (progressFill) {
+if (progressFill && "IntersectionObserver" in window) {
 
     const progressObserver =
         new IntersectionObserver(
@@ -136,8 +123,7 @@ if (progressFill) {
 
                     if (entry.isIntersecting) {
 
-                        progressFill.style.width =
-                            "84%";
+                        progressFill.style.width = "84%";
 
                         progressObserver.unobserve(
                             entry.target
@@ -149,14 +135,12 @@ if (progressFill) {
 
             },
             {
-                threshold:0.3
+                threshold: 0.3
             }
         );
 
 
-    progressObserver.observe(
-        progressFill
-    );
+    progressObserver.observe(progressFill);
 
 }
 
@@ -184,61 +168,244 @@ const sections =
         .filter(Boolean);
 
 
-const navObserver =
-    new IntersectionObserver(
-        (entries) => {
+if (sections.length && "IntersectionObserver" in window) {
 
-            entries.forEach(entry => {
+    const navObserver =
+        new IntersectionObserver(
+            (entries) => {
 
-                if (!entry.isIntersecting) {
-                    return;
-                }
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    navLinks.forEach(link => {
+
+                        link.classList.remove(
+                            "active"
+                        );
+
+                    });
 
 
-                navLinks.forEach(link => {
+                    const activeLink =
+                        document.querySelector(
+                            `.navlinks a[href="#${entry.target.id}"]`
+                        );
 
-                    link.classList.remove(
-                        "active"
-                    );
+
+                    if (activeLink) {
+
+                        activeLink.classList.add(
+                            "active"
+                        );
+
+                    }
 
                 });
 
+            },
+            {
+                rootMargin:
+                    "-35% 0px -55% 0px",
 
-                const activeLink =
-                    document.querySelector(
-                        `.navlinks a[href="#${entry.target.id}"]`
-                    );
+                threshold: 0
+            }
+        );
 
 
-                if (activeLink) {
+    sections.forEach(section => {
 
-                    activeLink.classList.add(
-                        "active"
-                    );
+        navObserver.observe(section);
 
-                }
+    });
 
-            });
+}
+
+
+// =========================================================
+// CERTIFICATE HORIZONTAL SCROLL
+// =========================================================
+
+const certificatesScroll =
+    document.getElementById("certificatesScroll");
+
+
+if (certificatesScroll) {
+
+    certificatesScroll.addEventListener(
+        "wheel",
+        (event) => {
+
+            if (Math.abs(event.deltaY) >
+                Math.abs(event.deltaX)) {
+
+                event.preventDefault();
+
+                certificatesScroll.scrollLeft +=
+                    event.deltaY;
+
+            }
 
         },
         {
-            rootMargin:
-                "-35% 0px -55% 0px",
-
-            threshold:0
+            passive: false
         }
     );
 
+}
 
-sections.forEach(section => {
 
-    navObserver.observe(section);
+// =========================================================
+// CERTIFICATE MODAL
+// =========================================================
+
+const certificateModal =
+    document.getElementById(
+        "certificateModal"
+    );
+
+const modalImage =
+    document.getElementById(
+        "modalImage"
+    );
+
+const modalTitle =
+    document.getElementById(
+        "modalTitle"
+    );
+
+const modalClose =
+    document.getElementById(
+        "modalClose"
+    );
+
+const modalOverlay =
+    document.getElementById(
+        "modalOverlay"
+    );
+
+const certificateCards =
+    document.querySelectorAll(
+        ".certificate-card"
+    );
+
+
+function openCertificate(
+    image,
+    title
+) {
+
+    if (!certificateModal) {
+        return;
+    }
+
+    modalImage.src = image;
+    modalImage.alt = title;
+
+    modalTitle.textContent = title;
+
+    certificateModal.removeAttribute(
+        "hidden"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+function closeCertificate() {
+
+    if (!certificateModal) {
+        return;
+    }
+
+    certificateModal.setAttribute(
+        "hidden",
+        ""
+    );
+
+    modalImage.src = "";
+
+    document.body.classList.remove(
+        "modal-open"
+    );
+
+}
+
+
+certificateCards.forEach(card => {
+
+    card.addEventListener(
+        "click",
+        () => {
+
+            const image =
+                card.getAttribute(
+                    "data-image"
+                );
+
+            const title =
+                card.getAttribute(
+                    "data-title"
+                );
+
+            openCertificate(
+                image,
+                title
+            );
+
+        }
+    );
 
 });
 
 
+if (modalClose) {
+
+    modalClose.addEventListener(
+        "click",
+        closeCertificate
+    );
+
+}
+
+
+if (modalOverlay) {
+
+    modalOverlay.addEventListener(
+        "click",
+        closeCertificate
+    );
+
+}
+
+
+// Close with ESC
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            certificateModal &&
+            !certificateModal.hasAttribute("hidden")
+        ) {
+
+            closeCertificate();
+
+        }
+
+    }
+);
+
+
 // =========================================================
-// SMOOTH CLOSE MENU ON RESIZE
+// CLOSE MOBILE MENU ON RESIZE
 // =========================================================
 
 window.addEventListener(
